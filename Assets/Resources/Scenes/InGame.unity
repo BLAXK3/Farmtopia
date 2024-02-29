@@ -196,7 +196,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 181.504, z: 0}
   m_AnchorMin: {x: 0.28989297, y: 0.38267806}
   m_AnchorMax: {x: 0.52842814, y: 0.53400004}
-  m_AnchoredPosition: {x: 16, y: -67.59991}
+  m_AnchoredPosition: {x: 16, y: -67.59988}
   m_SizeDelta: {x: 0.0000076294, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &11599540
@@ -1085,6 +1085,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 975877432}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
         m_MethodName: ShopStatusInput
         m_Mode: 5
         m_Arguments:
@@ -1400,6 +1412,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 975877432}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
         m_MethodName: CancelItmesSlot
@@ -1752,7 +1776,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.19000001, y: 0.252}
   m_AnchorMax: {x: 0.82865304, y: 0.455}
-  m_AnchoredPosition: {x: -0.00061035156, y: 0.018676758}
+  m_AnchoredPosition: {x: -0.00048828125, y: 0.018676758}
   m_SizeDelta: {x: 0.00097656, y: -0.092407}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &83352006
@@ -2245,7 +2269,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.24900001, y: 0.43600002}
   m_AnchorMax: {x: 0.731, y: 0.87500006}
-  m_AnchoredPosition: {x: 0.43251038, y: -0.000015258789}
+  m_AnchoredPosition: {x: 0.43249512, y: -0.000015258789}
   m_SizeDelta: {x: -0.86505, y: 0.000045776}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &101946601
@@ -2320,7 +2344,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.24900001, y: 0.43600002}
   m_AnchorMax: {x: 0.731, y: 0.87500006}
-  m_AnchoredPosition: {x: 0.43251038, y: -0.000015258789}
+  m_AnchoredPosition: {x: 0.43249512, y: -0.000015258789}
   m_SizeDelta: {x: -0.86505, y: 0.000045776}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &110965519
@@ -2445,6 +2469,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 975877432}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
         m_MethodName: Validate
@@ -3193,7 +3229,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.37740502, y: 0.18068103}
   m_AnchorMax: {x: 0.6711182, y: 0.78782976}
-  m_AnchoredPosition: {x: -0.000030517578, y: 0.2000122}
+  m_AnchoredPosition: {x: 0, y: 0.2000122}
   m_SizeDelta: {x: -0.000030518, y: -0.40001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &127451921
@@ -3240,6 +3276,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 975877432}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
         m_MethodName: StarShop
@@ -3372,6 +3420,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 391970498}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -3733,6 +3793,30 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877430}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 975877432}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
         m_MethodName: ShopStatusInput
@@ -3961,6 +4045,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 708287082}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -4182,6 +4278,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 975877432}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
         m_MethodName: Selling
         m_Mode: 1
         m_Arguments:
@@ -4338,7 +4446,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.24900001, y: 0.43600002}
   m_AnchorMax: {x: 0.731, y: 0.87500006}
-  m_AnchoredPosition: {x: 0.43251038, y: -0.000015258789}
+  m_AnchoredPosition: {x: 0.43249512, y: -0.000015258789}
   m_SizeDelta: {x: -0.86505, y: 0.000045776}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &178681991
@@ -4501,6 +4609,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1948764640}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -5075,6 +5195,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 975877432}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
         m_MethodName: Exchage
         m_Mode: 1
         m_Arguments:
@@ -5157,7 +5289,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.2071788, y: 0.39331955}
   m_AnchorMax: {x: 0.45082122, y: 0.7094437}
-  m_AnchoredPosition: {x: 0, y: 0.0000076293945}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &198367937
@@ -6048,6 +6180,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 975877432}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
         m_MethodName: Validate
         m_Mode: 3
         m_Arguments:
@@ -6373,7 +6517,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.24900001, y: 0.43600002}
   m_AnchorMax: {x: 0.731, y: 0.87500006}
-  m_AnchoredPosition: {x: 0.43251038, y: -0.000015258789}
+  m_AnchoredPosition: {x: 0.43249512, y: -0.000015258789}
   m_SizeDelta: {x: -0.86505, y: 0.000045776}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &242196214
@@ -6746,6 +6890,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 975877432}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
         m_MethodName: SoldThings
         m_Mode: 3
         m_Arguments:
@@ -6884,6 +7040,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 975877432}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
         m_MethodName: RestartGame
@@ -7248,7 +7416,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000030517578, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &292994692
@@ -7555,6 +7723,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 975877432}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
         m_MethodName: CallMethod
         m_Mode: 1
         m_Arguments:
@@ -7757,6 +7937,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 975877432}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
         m_MethodName: CancelItmesSlot
@@ -8241,6 +8433,18 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1018506150}
         m_TargetAssemblyTypeName: VolumeSettings, Assembly-CSharp
         m_MethodName: SetSFXVolume
@@ -8362,12 +8566,12 @@ GameObject:
   - component: {fileID: 328600322}
   - component: {fileID: 328600321}
   m_Layer: 5
-  m_Name: Time
+  m_Name: Setting Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &328600320
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8381,13 +8585,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1626897680}
-  - {fileID: 457116506}
   m_Father: {fileID: 2143117200}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.7363092, y: 0.058000002}
+  m_AnchorMin: {x: 0.8786764, y: 0.058000002}
   m_AnchorMax: {x: 1, y: 0.36368933}
-  m_AnchoredPosition: {x: 1.5, y: -0.25439453}
-  m_SizeDelta: {x: 4.699997, y: -1.5080566}
+  m_AnchoredPosition: {x: 17.599976, y: 0}
+  m_SizeDelta: {x: -1.5049, y: -0.000076294}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &328600321
 MonoBehaviour:
@@ -8509,6 +8712,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 54961040}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -9000,6 +9215,30 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 975877432}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
         m_MethodName: SoldThings
@@ -10716,6 +10955,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1948764640}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -10871,7 +11122,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 0.42969087, y: 0.50960225}
   m_AnchorMax: {x: 0.56961834, y: 0.725}
-  m_AnchoredPosition: {x: -3.100006, y: 0.2000122}
+  m_AnchoredPosition: {x: -3.0999756, y: 0.2000122}
   m_SizeDelta: {x: 68.3, y: -60.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &417110330
@@ -10967,7 +11218,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000061035156, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &420026513
@@ -11135,6 +11386,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1948764640}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -12050,51 +12313,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 455442918}
   m_CullTransparentMesh: 1
---- !u!1 &457116505
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 457116506}
-  - component: {fileID: 457116508}
-  m_Layer: 5
-  m_Name: Time
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &457116506
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 457116505}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1847825975}
-  m_Father: {fileID: 328600320}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.082, y: 0.20400001}
-  m_AnchorMax: {x: 0.609, y: 0.90068346}
-  m_AnchoredPosition: {x: -0.45251465, y: -0.20010376}
-  m_SizeDelta: {x: 0.905, y: 0.38993}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &457116508
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 457116505}
-  m_CullTransparentMesh: 1
 --- !u!1 &462153028
 GameObject:
   m_ObjectHideFlags: 0
@@ -12248,7 +12466,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.24900001, y: 0.43600002}
   m_AnchorMax: {x: 0.731, y: 0.87500006}
-  m_AnchoredPosition: {x: 0.43251038, y: -0.000015258789}
+  m_AnchoredPosition: {x: 0.43249512, y: -0.000015258789}
   m_SizeDelta: {x: -0.86505, y: 0.000045776}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &466350936
@@ -12371,6 +12589,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 975877432}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
         m_MethodName: SoldThings
@@ -12579,6 +12809,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 1844397328}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -14067,7 +14309,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.10879203, y: 0}
   m_AnchorMax: {x: 0.47768337, y: 0.2052235}
-  m_AnchoredPosition: {x: 0, y: -43.499985}
+  m_AnchoredPosition: {x: 0, y: -43.5}
   m_SizeDelta: {x: 3.7999878, y: 84.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &536948961
@@ -14114,6 +14356,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 975877432}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
         m_MethodName: BuyArea
@@ -14926,6 +15180,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 975877432}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
         m_MethodName: SoldThings
         m_Mode: 3
         m_Arguments:
@@ -15478,6 +15744,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1948764640}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -15598,7 +15876,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1017059906}
+      - m_Target: {fileID: 777653053}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -15923,7 +16201,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000061035156, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &604896175
@@ -16047,7 +16325,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1972159021}
   m_Father: {fileID: 1018506149}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -16193,6 +16472,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
@@ -16395,6 +16686,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 975877432}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
         m_MethodName: SoldThings
         m_Mode: 3
         m_Arguments:
@@ -16527,6 +16830,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 975877432}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
         m_MethodName: Validate
@@ -17017,6 +17332,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 975877432}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
         m_MethodName: StarShop
         m_Mode: 3
         m_Arguments:
@@ -17147,6 +17474,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 77489121}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -17984,7 +18323,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000030517578, y: 0}
+  m_AnchoredPosition: {x: 0.000061035156, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &678725428
@@ -18950,7 +19289,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.24900001, y: 0.43600002}
   m_AnchorMax: {x: 0.731, y: 0.87500006}
-  m_AnchoredPosition: {x: 0.43251038, y: -0.000015258789}
+  m_AnchoredPosition: {x: 0.43249512, y: -0.000015258789}
   m_SizeDelta: {x: -0.86505, y: 0.000045776}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &726034993
@@ -19025,7 +19364,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.13661833, y: 0.74019986}
   m_AnchorMax: {x: 0.8473817, y: 0.9095995}
-  m_AnchoredPosition: {x: 0.00061035156, y: 0}
+  m_AnchoredPosition: {x: 0.0007324219, y: 0}
   m_SizeDelta: {x: 0.18921, y: 0.000030518}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &727030081
@@ -19337,7 +19676,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 0.42969087, y: 0.50960225}
   m_AnchorMax: {x: 0.56961834, y: 0.725}
-  m_AnchoredPosition: {x: -3.100006, y: 0.2000122}
+  m_AnchoredPosition: {x: -3.0999756, y: 0.2000122}
   m_SizeDelta: {x: 68.3, y: -60.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &732072895
@@ -19783,6 +20122,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1948764640}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -19903,7 +20254,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1495897164}
+      - m_Target: {fileID: 1056152130}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -20908,6 +21259,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 975877432}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
         m_MethodName: SoldThings
         m_Mode: 3
         m_Arguments:
@@ -21285,12 +21648,36 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 975877432}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
         m_MethodName: SetTextStatus
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -21926,7 +22313,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 181.504, z: 0}
   m_AnchorMin: {x: 0.28989297, y: 0.38267806}
   m_AnchorMax: {x: 0.52842814, y: 0.53400004}
-  m_AnchoredPosition: {x: 125.9, y: 125.10009}
+  m_AnchoredPosition: {x: 125.9, y: 125.10012}
   m_SizeDelta: {x: 0.0000076294, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &806232316
@@ -22168,6 +22555,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &810460423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22242,7 +22641,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000030517578, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &817263815
@@ -22595,7 +22994,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.13661833, y: 0.74019986}
   m_AnchorMax: {x: 0.8473817, y: 0.9095995}
-  m_AnchoredPosition: {x: 0.00061035156, y: 0}
+  m_AnchoredPosition: {x: 0.0007324219, y: 0}
   m_SizeDelta: {x: 0.18921, y: 0.000030518}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &837644890
@@ -23214,6 +23613,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 1948764640}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -23823,6 +24234,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1948764640}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -24223,6 +24646,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 975877432}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
         m_MethodName: SetTextStatus
         m_Mode: 1
         m_Arguments:
@@ -24511,6 +24946,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 975877430}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: Home
@@ -24813,6 +25260,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 975877432}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
         m_MethodName: Validate
@@ -25166,7 +25625,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.102000006, y: 0.4803557}
   m_AnchorMax: {x: 0.27561826, y: 0.54515463}
-  m_AnchoredPosition: {x: 0.22387695, y: -0.11836243}
+  m_AnchoredPosition: {x: 0.22387695, y: -0.11834717}
   m_SizeDelta: {x: -0.44765, y: -0.23669}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &900285330
@@ -25328,6 +25787,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 975877432}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
         m_MethodName: Validate
@@ -26292,6 +26763,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 975877432}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
         m_MethodName: Validate
         m_Mode: 3
         m_Arguments:
@@ -26968,7 +27451,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.277, y: 0}
   m_AnchorMax: {x: 0.71327084, y: 0.2764033}
-  m_AnchoredPosition: {x: 0, y: -238.99976}
+  m_AnchoredPosition: {x: 0, y: -238.99957}
   m_SizeDelta: {x: -273.7, y: 0.028999329}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &965571528
@@ -27055,6 +27538,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 975877432}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
         m_MethodName: SetAreaBool
         m_Mode: 1
         m_Arguments:
@@ -27135,7 +27630,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.15469047, y: 0.54762226}
   m_AnchorMax: {x: 0.41438094, y: 0.5781556}
-  m_AnchoredPosition: {x: 44.000153, y: 0}
+  m_AnchoredPosition: {x: 44.000244, y: 0}
   m_SizeDelta: {x: 88.00012, y: -0.000061035156}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &965981745
@@ -27550,7 +28045,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.15469047, y: 0.54762226}
   m_AnchorMax: {x: 0.41438094, y: 0.5781556}
-  m_AnchoredPosition: {x: 44.000153, y: 0}
+  m_AnchoredPosition: {x: 44.000244, y: 0}
   m_SizeDelta: {x: 88.00012, y: -0.000061035156}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &975518151
@@ -27784,7 +28279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerlevel: 0
   Star: 0
-  Money: 0
+  Money: 100
   arealevels: 0
   pause: {fileID: 1953805902}
   bagBtnSet: {fileID: 2076216836}
@@ -28059,6 +28554,8 @@ MonoBehaviour:
   - {fileID: 1631755023}
   - {fileID: 2110105477}
   - {fileID: 940430598}
+  EndGame:
+  - {fileID: 1577273724}
   Area:
   - {fileID: 416252865}
   - {fileID: 1464142313}
@@ -28370,6 +28867,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 975877432}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
         m_MethodName: StarShop
         m_Mode: 3
         m_Arguments:
@@ -28500,6 +29009,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 975877432}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
         m_MethodName: ResetSlot
@@ -28972,7 +29493,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000030517578, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1010702084
@@ -29405,6 +29926,18 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1018506150}
         m_TargetAssemblyTypeName: VolumeSettings, Assembly-CSharp
         m_MethodName: SetMusicVolume
@@ -29799,6 +30332,7 @@ RectTransform:
   - {fileID: 1692398244}
   - {fileID: 1538644195}
   - {fileID: 1953805903}
+  - {fileID: 1577273725}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -30049,8 +30583,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 114.8
-  m_fontSizeBase: 114.8
+  m_fontSize: 95.5
+  m_fontSizeBase: 95.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -30183,6 +30717,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 975877432}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
         m_MethodName: Validate
@@ -30781,7 +31327,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000030517578, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1061728734
@@ -30927,6 +31473,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 975877432}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
         m_MethodName: Validate
@@ -31290,6 +31848,110 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3099163101947660857, guid: 84c81415b80379b4f9214403ca85063c, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522499192830145703, guid: 84c81415b80379b4f9214403ca85063c, type: 3}
+      propertyPath: Buy
+      value: 
+      objectReference: {fileID: 8300000, guid: 341efcc6d0b286d4180ae773f2ea44d0, type: 3}
+    - target: {fileID: 6522499192830145703, guid: 84c81415b80379b4f9214403ca85063c, type: 3}
+      propertyPath: Cow
+      value: 
+      objectReference: {fileID: 8300000, guid: 7af93784c042397439d4cc86d7142fc6, type: 3}
+    - target: {fileID: 6522499192830145703, guid: 84c81415b80379b4f9214403ca85063c, type: 3}
+      propertyPath: Pig
+      value: 
+      objectReference: {fileID: 8300000, guid: 408ff9b3fec5bab419fee847f1c4372c, type: 3}
+    - target: {fileID: 6522499192830145703, guid: 84c81415b80379b4f9214403ca85063c, type: 3}
+      propertyPath: Pop
+      value: 
+      objectReference: {fileID: 8300000, guid: 08c2e0f2a7f58cf4ab6d1354f7c3876e, type: 3}
+    - target: {fileID: 6522499192830145703, guid: 84c81415b80379b4f9214403ca85063c, type: 3}
+      propertyPath: Bell
+      value: 
+      objectReference: {fileID: 8300000, guid: d6bc154e06fd24e4eb2af63397331a99, type: 3}
+    - target: {fileID: 6522499192830145703, guid: 84c81415b80379b4f9214403ca85063c, type: 3}
+      propertyPath: Door
+      value: 
+      objectReference: {fileID: 8300000, guid: b399a037397ff8946a7a67c8c1516d1d, type: 3}
+    - target: {fileID: 6522499192830145703, guid: 84c81415b80379b4f9214403ca85063c, type: 3}
+      propertyPath: Fish
+      value: 
+      objectReference: {fileID: 8300000, guid: db563093d3bccd2468a3a33e8174bdae, type: 3}
+    - target: {fileID: 6522499192830145703, guid: 84c81415b80379b4f9214403ca85063c, type: 3}
+      propertyPath: Pop2
+      value: 
+      objectReference: {fileID: 8300000, guid: 3e1a0a521f6113b4bb2075acffe0e5b4, type: 3}
+    - target: {fileID: 6522499192830145703, guid: 84c81415b80379b4f9214403ca85063c, type: 3}
+      propertyPath: Star
+      value: 
+      objectReference: {fileID: 8300000, guid: 9e35ad26df3b8a6429c0739d290bfdd3, type: 3}
+    - target: {fileID: 6522499192830145703, guid: 84c81415b80379b4f9214403ca85063c, type: 3}
+      propertyPath: Click
+      value: 
+      objectReference: {fileID: 8300000, guid: 8a3918f11b4d80140ada771a652eb5f0, type: 3}
+    - target: {fileID: 6522499192830145703, guid: 84c81415b80379b4f9214403ca85063c, type: 3}
+      propertyPath: Horse
+      value: 
+      objectReference: {fileID: 8300000, guid: d20b6895b2139cb458246dd32de156ae, type: 3}
+    - target: {fileID: 6522499192830145703, guid: 84c81415b80379b4f9214403ca85063c, type: 3}
+      propertyPath: Money
+      value: 
+      objectReference: {fileID: 8300000, guid: 257ec7018b9178a4f8ad608ba8a424d4, type: 3}
+    - target: {fileID: 6522499192830145703, guid: 84c81415b80379b4f9214403ca85063c, type: 3}
+      propertyPath: Denied
+      value: 
+      objectReference: {fileID: 8300000, guid: 7291d5fe2f616aa44bb7492800b798ca, type: 3}
+    - target: {fileID: 6522499192830145703, guid: 84c81415b80379b4f9214403ca85063c, type: 3}
+      propertyPath: Unlock
+      value: 
+      objectReference: {fileID: 8300000, guid: 094e01ef835f58c40b4674c49caf88d8, type: 3}
+    - target: {fileID: 6522499192830145703, guid: 84c81415b80379b4f9214403ca85063c, type: 3}
+      propertyPath: Buffalo
+      value: 
+      objectReference: {fileID: 8300000, guid: c4432c215aa7a0c46b776d8b77b866f2, type: 3}
+    - target: {fileID: 6522499192830145703, guid: 84c81415b80379b4f9214403ca85063c, type: 3}
+      propertyPath: Chicken
+      value: 
+      objectReference: {fileID: 8300000, guid: c1b308c3eebfdd14a8cec347ea47d093, type: 3}
+    - target: {fileID: 6522499192830145703, guid: 84c81415b80379b4f9214403ca85063c, type: 3}
+      propertyPath: Harvest
+      value: 
+      objectReference: {fileID: 8300000, guid: e622eadab7e530148a16d21acc4292f9, type: 3}
+    - target: {fileID: 6522499192830145703, guid: 84c81415b80379b4f9214403ca85063c, type: 3}
+      propertyPath: LevelUp
+      value: 
+      objectReference: {fileID: 8300000, guid: 8b8e9527971c55c44b0efc0ad03ddd98, type: 3}
+    - target: {fileID: 6522499192830145703, guid: 84c81415b80379b4f9214403ca85063c, type: 3}
+      propertyPath: Planting
+      value: 
+      objectReference: {fileID: 8300000, guid: 1f3310424ab32534ba5817cf3b7e6406, type: 3}
+    - target: {fileID: 6522499192830145703, guid: 84c81415b80379b4f9214403ca85063c, type: 3}
+      propertyPath: BackClick
+      value: 
+      objectReference: {fileID: 8300000, guid: c62bc3827c7c24e49ad0c6fab4c2fa8a, type: 3}
+    - target: {fileID: 6522499192830145703, guid: 84c81415b80379b4f9214403ca85063c, type: 3}
+      propertyPath: FishHarvest
+      value: 
+      objectReference: {fileID: 8300000, guid: 568abbeb911035d47abbc6c9024a0586, type: 3}
+    - target: {fileID: 6522499192830145703, guid: 84c81415b80379b4f9214403ca85063c, type: 3}
+      propertyPath: LevelUnlock
+      value: 
+      objectReference: {fileID: 8300000, guid: dbb851ddb39721849aac50021963f826, type: 3}
+    - target: {fileID: 6522499192830145703, guid: 84c81415b80379b4f9214403ca85063c, type: 3}
+      propertyPath: PlantHarvest
+      value: 
+      objectReference: {fileID: 8300000, guid: bf8acaa84f2c2b04b938d473f0745aa8, type: 3}
+    - target: {fileID: 6522499192830145703, guid: 84c81415b80379b4f9214403ca85063c, type: 3}
+      propertyPath: AnimalHarvest
+      value: 
+      objectReference: {fileID: 8300000, guid: def2b0247d5152142963ea269b085c5a, type: 3}
+    - target: {fileID: 6522499192830145703, guid: 84c81415b80379b4f9214403ca85063c, type: 3}
+      propertyPath: BackGroundMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: e6ea1a964c8e3b84489058a687299006, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -32196,7 +32858,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.102000006, y: 0.4803557}
   m_AnchorMax: {x: 0.27561826, y: 0.54515463}
-  m_AnchoredPosition: {x: 0.22387695, y: -0.11836243}
+  m_AnchoredPosition: {x: 0.22387695, y: -0.11834717}
   m_SizeDelta: {x: -0.44765, y: -0.23669}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1132143873
@@ -32981,6 +33643,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 294200477}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -34187,6 +34861,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1190791185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34309,6 +34995,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 975877432}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
         m_MethodName: BackToGame
         m_Mode: 1
         m_Arguments:
@@ -34405,7 +35103,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000030517578, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1217244829
@@ -34516,7 +35214,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000030517578, y: 0.026794434}
+  m_AnchoredPosition: {x: 0, y: 0.026794434}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1225214985
@@ -34613,7 +35311,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.19000001, y: 0.252}
   m_AnchorMax: {x: 0.82865304, y: 0.455}
-  m_AnchoredPosition: {x: -0.00061035156, y: 0.018676758}
+  m_AnchoredPosition: {x: -0.00048828125, y: 0.018676758}
   m_SizeDelta: {x: 0.00097656, y: -0.092407}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1231010806
@@ -35545,7 +36243,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.24900001, y: 0.43600002}
   m_AnchorMax: {x: 0.731, y: 0.87500006}
-  m_AnchoredPosition: {x: 0.43251038, y: -0.000015258789}
+  m_AnchoredPosition: {x: 0.43252563, y: -0.000015258789}
   m_SizeDelta: {x: -0.86505, y: 0.000045776}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1277617142
@@ -36237,6 +36935,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 975877432}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
         m_MethodName: Exchage
         m_Mode: 1
         m_Arguments:
@@ -36723,6 +37433,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1948764640}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -36843,7 +37565,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2110105477}
+      - m_Target: {fileID: 1650951357}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -37338,6 +38060,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 975877432}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
         m_MethodName: SoldThings
         m_Mode: 3
         m_Arguments:
@@ -37767,7 +38501,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000030517578, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1324656629
@@ -37924,6 +38658,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 54961040}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -38516,6 +39262,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1891722250}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -39829,6 +40587,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 795055188}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -40047,6 +40817,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 975877432}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
         m_MethodName: StarShopSetBool
         m_Mode: 6
         m_Arguments:
@@ -40251,7 +41033,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000030517578, y: 0}
+  m_AnchoredPosition: {x: 0.000061035156, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1413634351
@@ -41043,6 +41825,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1423294014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41684,6 +42478,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 975877432}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
         m_MethodName: SoldThings
@@ -42851,6 +43657,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1948764640}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -43204,6 +44022,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 758683186}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -43302,7 +44132,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000030517578, y: 0}
+  m_AnchoredPosition: {x: 0.000061035156, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1473321365
@@ -43582,6 +44412,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1948764640}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -43862,6 +44704,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 975877432}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
         m_MethodName: StarShop
         m_Mode: 3
         m_Arguments:
@@ -44107,6 +44961,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1948764640}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -44384,6 +45250,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 548727326}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -44589,7 +45467,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.24900001, y: 0.43600002}
   m_AnchorMax: {x: 0.731, y: 0.87500006}
-  m_AnchoredPosition: {x: 0.43251038, y: -0.000015258789}
+  m_AnchoredPosition: {x: 0.43249512, y: -0.000015258789}
   m_SizeDelta: {x: -0.86505, y: 0.000045776}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1498279672
@@ -44799,7 +45677,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000061035156, y: -0.00018310547}
+  m_AnchoredPosition: {x: 0, y: -0.00024414062}
   m_SizeDelta: {x: -19.588, y: -61.235}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1517068837
@@ -45447,7 +46325,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000030517578, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1541801818
@@ -46102,8 +46980,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 102
-  m_fontSizeBase: 102
+  m_fontSize: 93.7
+  m_fontSizeBase: 93.7
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -46658,6 +47536,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 975877432}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
         m_MethodName: SoldThings
         m_Mode: 3
         m_Arguments:
@@ -46784,6 +47674,140 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1572978779}
   m_CullTransparentMesh: 1
+--- !u!1 &1574247039
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1574247040}
+  - component: {fileID: 1574247042}
+  - component: {fileID: 1574247041}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1574247040
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574247039}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1577273725}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 10.400002}
+  m_SizeDelta: {x: 0, y: -20.9}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1574247041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574247039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: End
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 7b855d2a23775e142bfbaf4ac54710cb, type: 2}
+  m_sharedMaterial: {fileID: -2394029187288489213, guid: 7b855d2a23775e142bfbaf4ac54710cb, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 157.65
+  m_fontSizeBase: 157.65
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1574247042
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574247039}
+  m_CullTransparentMesh: 1
 --- !u!1 &1574675104
 GameObject:
   m_ObjectHideFlags: 0
@@ -46829,6 +47853,139 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1574675104}
+  m_CullTransparentMesh: 1
+--- !u!1 &1577273724
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1577273725}
+  - component: {fileID: 1577273728}
+  - component: {fileID: 1577273727}
+  - component: {fileID: 1577273726}
+  m_Layer: 5
+  m_Name: End Game
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1577273725
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577273724}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.9998135, y: 0.9998135, z: 0.9998135}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1574247040}
+  m_Father: {fileID: 1018506149}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.42464724, y: 0.42400002}
+  m_AnchorMax: {x: 0.5866764, y: 0.46100003}
+  m_AnchoredPosition: {x: 0.00020599365, y: 0.04499817}
+  m_SizeDelta: {x: 0.044281, y: 0.111}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1577273726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577273724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1577273727}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 975877430}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: Credits
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1577273727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577273724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -1920690403, guid: b9972b24e17b49f43a09fb71c6b6c8d9, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1577273728
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577273724}
   m_CullTransparentMesh: 1
 --- !u!1 &1577341592
 GameObject:
@@ -47416,7 +48573,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.52135265, y: 0.18232882}
   m_AnchorMax: {x: 0.9474593, y: 0.82100004}
-  m_AnchoredPosition: {x: 0, y: -0.000061035156}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: -0.000045776}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1611475324
@@ -47463,6 +48620,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 975877432}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
         m_MethodName: StarShopSetBool
@@ -47777,6 +48946,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 948620630}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -48032,8 +49213,9 @@ GameObject:
   - component: {fileID: 1626897680}
   - component: {fileID: 1626897682}
   - component: {fileID: 1626897681}
+  - component: {fileID: 1626897683}
   m_Layer: 5
-  m_Name: Shovel
+  m_Name: Setting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48046,17 +49228,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1626897679}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 328600320}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.633, y: 0.20400001}
-  m_AnchorMax: {x: 0.99200004, y: 0.924}
-  m_AnchoredPosition: {x: -0.5, y: -0.38998413}
-  m_SizeDelta: {x: -0.10000038, y: 0.010002136}
+  m_AnchorMin: {x: 0, y: 0.08610012}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0.651001, y: -0.1800003}
+  m_SizeDelta: {x: -0.47000122, y: 0.02999878}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1626897681
 MonoBehaviour:
@@ -48078,7 +49260,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1016299568, guid: 970850edc1883514b96dc8fe189adb14, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 61ea2789ab15bff408821f88f7ec82d4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -48096,6 +49278,74 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1626897679}
   m_CullTransparentMesh: 1
+--- !u!114 &1626897683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626897679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1626897681}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Setting
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1953805902}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &1629089916
 GameObject:
   m_ObjectHideFlags: 0
@@ -48206,7 +49456,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000061035156, y: -0.000061035156}
+  m_AnchoredPosition: {x: 0, y: -0.00012207031}
   m_SizeDelta: {x: -19.598, y: -61.235}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1630698594
@@ -48559,8 +49809,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 109.5
-  m_fontSizeBase: 109.5
+  m_fontSize: 92.4
+  m_fontSizeBase: 92.4
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -49056,6 +50306,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 975877432}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
         m_MethodName: SetShopPrice
         m_Mode: 1
         m_Arguments:
@@ -49344,7 +50606,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000030517578, y: 0}
+  m_AnchoredPosition: {x: 0.000061035156, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1666022512
@@ -49501,6 +50763,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 975877432}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
         m_MethodName: SoldThings
@@ -49660,7 +50934,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.24900001, y: 0.43600002}
   m_AnchorMax: {x: 0.731, y: 0.87500006}
-  m_AnchoredPosition: {x: 0.43251038, y: -0.000015258789}
+  m_AnchoredPosition: {x: 0.43249512, y: -0.000015258789}
   m_SizeDelta: {x: -0.86505, y: 0.000045776}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1678636545
@@ -50091,6 +51365,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 2015420442}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -50427,6 +51713,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 975877432}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
         m_MethodName: ShopStatusInput
@@ -51533,6 +52831,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1750152267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51691,6 +53001,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 975877432}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
         m_MethodName: StarShop
@@ -51968,7 +53290,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000030517578, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1780423310
@@ -52286,7 +53608,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.24900001, y: 0.43600002}
   m_AnchorMax: {x: 0.731, y: 0.87500006}
-  m_AnchoredPosition: {x: 0.43251038, y: -0.000015258789}
+  m_AnchoredPosition: {x: 0.43249512, y: -0.000015258789}
   m_SizeDelta: {x: -0.86505, y: 0.000045776}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1790232090
@@ -52677,6 +53999,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 975877432}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
         m_MethodName: Bag
@@ -53946,140 +55280,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!1 &1847825974
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1847825975}
-  - component: {fileID: 1847825977}
-  - component: {fileID: 1847825976}
-  m_Layer: 5
-  m_Name: Text (TMP)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1847825975
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1847825974}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 457116506}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1847825976
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1847825974}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: 00:00
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7b855d2a23775e142bfbaf4ac54710cb, type: 2}
-  m_sharedMaterial: {fileID: -2394029187288489213, guid: 7b855d2a23775e142bfbaf4ac54710cb, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &1847825977
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1847825974}
-  m_CullTransparentMesh: 1
 --- !u!1 &1848919446
 GameObject:
   m_ObjectHideFlags: 0
@@ -54727,7 +55927,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.24900001, y: 0.43600002}
   m_AnchorMax: {x: 0.731, y: 0.87500006}
-  m_AnchoredPosition: {x: 0.43251038, y: -0.000015258789}
+  m_AnchoredPosition: {x: 0.43252563, y: -0.000015258789}
   m_SizeDelta: {x: -0.86505, y: 0.000045776}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1862088268
@@ -55001,6 +56201,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1948764640}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -55589,6 +56801,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 975877432}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
         m_MethodName: Bag
         m_Mode: 3
         m_Arguments:
@@ -55824,6 +57048,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 975877432}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
         m_MethodName: Validate
@@ -56182,6 +57418,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 1054005636}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -56505,7 +57753,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000061035156, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1946860389
@@ -56619,10 +57867,10 @@ RectTransform:
   - {fileID: 1707592784}
   m_Father: {fileID: 795055189}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.7363092, y: 0.058000002}
-  m_AnchorMax: {x: 1, y: 0.36368933}
-  m_AnchoredPosition: {x: 21.599976, y: 1801.8}
-  m_SizeDelta: {x: -43, y: -781.7}
+  m_AnchorMin: {x: 0.76532364, y: 0.81600004}
+  m_AnchorMax: {x: 1, y: 0.86500007}
+  m_AnchoredPosition: {x: 0.0043945312, y: 0}
+  m_SizeDelta: {x: 0.19119, y: 0.078262}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1948093230
 MonoBehaviour:
@@ -56815,7 +58063,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.53300005, y: 0}
   m_AnchorMax: {x: 0.90850526, y: 0.2052235}
-  m_AnchoredPosition: {x: -1, y: -43.499985}
+  m_AnchoredPosition: {x: -1, y: -43.5}
   m_SizeDelta: {x: -2.2000122, y: 84.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1956703002
@@ -56862,6 +58110,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 549692481}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -57278,6 +58538,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1964271729}
   m_CullTransparentMesh: 1
+--- !u!1 &1972159020
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1972159021}
+  m_Layer: 5
+  m_Name: Part 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1972159021
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972159020}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 607850436}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1972464910
 GameObject:
   m_ObjectHideFlags: 0
@@ -57496,6 +58791,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 975877432}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
         m_MethodName: Validate
@@ -58186,7 +59493,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.28989297, y: 0.38267806}
   m_AnchorMax: {x: 0.52842814, y: 0.53400004}
-  m_AnchoredPosition: {x: 0, y: 0.000015258789}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0.0000076294, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &2029687473
@@ -58857,6 +60164,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 975877432}
         m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
         m_MethodName: StarShop
         m_Mode: 3
         m_Arguments:
@@ -59250,6 +60569,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1844397328}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -59685,6 +61016,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &2112292016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59844,6 +61187,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 975877432}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 948620630}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
