@@ -2,28 +2,47 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    [Header("Audio Source")]
     [SerializeField] AudioSource MusicSource;
     [SerializeField] AudioSource SFXSource;
 
-    [Header("Audio Clip")]
-    public AudioClip BackGround;
-    public AudioClip TakeDamage;
-    public AudioClip CorrectAns;
-    public AudioClip WrongAns;
-    public AudioClip BtnClick;
-    public AudioClip BtnBack;
-    public AudioClip Gameover;
-    public AudioClip Dead;
-    public AudioClip Healpotion;
-    public AudioClip ATKpotion;
-    public AudioClip Emptypotion;
-    public AudioClip Victory;
+    [Header("BGM")]
+
+    public AudioClip BackGroundMusic;
+
+    [Header("UI Audio")]
+    public AudioClip Click;
+    public AudioClip BackClick;
+    public AudioClip Money;
+    public AudioClip Star;
+    public AudioClip LevelUp;
+    public AudioClip Bell;
+    public AudioClip Buy;
+    public AudioClip Pop;
+    public AudioClip Pop2;
     public AudioClip Denied;
+    public AudioClip Door;
+    public AudioClip LevelUnlock;
+    public AudioClip Unlock;
+
+    [Header("Planting Audio")]
+    public AudioClip Planting;
+
+    [Header("Harvest")]
+    public AudioClip PlantHarvest;
+    public AudioClip FishHarvest;
+    public AudioClip AnimalHarvest;
+
+    [Header("Animal Audio")]
+    public AudioClip Fish;
+    public AudioClip Chicken;
+    public AudioClip Pig;
+    public AudioClip Buffalo;
+    public AudioClip Cow;
+    public AudioClip Horse;
 
     private void Start()
     {
-        MusicSource.clip = BackGround;
+        MusicSource.clip = BackGroundMusic;
         MusicSource.Play();
     }
 

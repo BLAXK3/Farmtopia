@@ -10,7 +10,7 @@ using UnityEngine.SceneManagement;
 
 public class GameControl : MonoBehaviour
 {
-    private int index, areaprice, areaunlocked, rtval, maxSlotA, maxSlotB, cancelSlotA, cancelSlotB, QtSlotA, QtSlotB, currentSlotItems, areaNumbersStart, areaNumbersEnd, secretval, exp, StarPrice, ShopPrice, thingsAmount, reGameAmount = 1;
+    private int index, areaprice, areaunlocked, rtval, maxSlotA, maxSlotB, cancelSlotA, cancelSlotB, QtSlotA, QtSlotB, currentSlotItems, areaNumbersStart, areaNumbersEnd, secretval, exp, targetExp ,StarPrice, ShopPrice, thingsAmount, reGameAmount = 1;
     private float secretTime, STime, NTime, SCTime, NCTime, StarAmount;
     private long MoneyAmount;
     private string methodstats, itemsname, shopstatus, bagval;
@@ -27,6 +27,7 @@ public class GameControl : MonoBehaviour
     private Dictionary<int, int> animalQt = new Dictionary<int, int>();
     private Color Lock, Unlock = Color.white;
     private Transform AnimalName, SeedsName;
+    private AudioManager audioManager;
 
     [Header("----------------------------Player Value---------------------------------")]
     [SerializeField] private int playerlevel;
@@ -37,7 +38,7 @@ public class GameControl : MonoBehaviour
     public int arealevels;
     [SerializeField] private GameObject pause, bagBtnSet, things, slot;
     [SerializeField] private List<TextMeshProUGUI> MoneyUpText, StarUpText ,MoneyText, StarText, LevelText, AlertMessageText, AnimalNameText, AnimalPriceText, SeedsNameText, SeedsPriceText, QuantityText, SoldText, SlotText;
-    [SerializeField] private List<GameObject> AreaLevelLock, alert, AreaLock, bag, AnimalLock, SeedsLock, Quantity, InventoryBag, AnimalsDisable, BtnDisable, Block, animalObj, ArrowPoint, Cloud, MoneyUp, StarUp;
+    [SerializeField] private List<GameObject> AreaLevelLock, alert, AreaLock, bag, AnimalLock, SeedsLock, Quantity, InventoryBag, AnimalsDisable, BtnDisable, Block, animalObj, ArrowPoint, Cloud, MoneyUp, StarUp, EndGame;
     [SerializeField] private List<Image> Area, Seeds, Animal, Slot, plants;
     [SerializeField] private List<Animator> anim;
     [SerializeField] private List<int> inventory, plantsGrowLevel, itemPrice;
@@ -51,6 +52,7 @@ public class GameControl : MonoBehaviour
     private void Start()
     {
         NCTime = NTime = 40f;
+        TargetExperience = 100;
         ValueOfPlayerExperience = 0;
         AreaPriceUpdate = 200;
         StarPriceUpdate = 1000;
@@ -62,6 +64,11 @@ public class GameControl : MonoBehaviour
                 image.color = Lock;
             }
         }
+    }
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     private void Update()
@@ -105,6 +112,12 @@ public class GameControl : MonoBehaviour
     {
         get => bagval;
         set => bagval = value;
+    }
+
+    private int TargetExperience
+    {
+        get => targetExp;
+        set => targetExp = value;
     }
 
     private int ValueIndexOfObject
@@ -191,12 +204,38 @@ public class GameControl : MonoBehaviour
         set => itemsname = value;
     }
 
+    public void Click(int val)
+    {
+        if (val == 0)
+        {
+            audioManager.PlaySFX(audioManager.Click);
+        }
+        else if (val == 2)
+        {
+            audioManager.PlaySFX(audioManager.Door);
+        }
+        else if (val == 3)
+        {
+            audioManager.PlaySFX(audioManager.Pop2);
+        }
+        else if (val == 4)
+        {
+            audioManager.PlaySFX(audioManager.Bell);
+        }
+        else
+        {
+            audioManager.PlaySFX(audioManager.BackClick);
+        }
+    }
+
     private void PlayerExperience()
     {
-        if (ValueOfPlayerExperience >= AreaPriceUpdate) 
+        if (ValueOfPlayerExperience >= TargetExperience) 
         {
+            audioManager.PlaySFX(audioManager.LevelUp);
             ValueOfPlayerLevel++;
             ValueOfPlayerExperience = 0;
+            TargetExperience *= 2;
         } 
     }
 
@@ -205,8 +244,9 @@ public class GameControl : MonoBehaviour
         secretfunc = true;
         if (secretval == 10)
         {
-            ValueOfPlayerLevel++;
-            ValueOfPlayerMoney += 10000;
+            audioManager.PlaySFX(audioManager.LevelUp);
+            ValueOfPlayerLevel+= 20;
+            ValueOfPlayerMoney += 5000000;
             ValueOfPlayerStar += 1000;
             scOpt = true;
             secretval = 0;
@@ -226,6 +266,7 @@ public class GameControl : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadSceneAsync("InGame");
+        Time.timeScale = 1f;
     }
 
     public void SetItemsName(string name)
@@ -236,7 +277,7 @@ public class GameControl : MonoBehaviour
     //Setting Defualt Value
     private void ValueSetting()
     {
-        SCTime += 0.005f;
+        SCTime += 0.020f;
 
         if (levelmax != true)
         {
@@ -287,13 +328,13 @@ public class GameControl : MonoBehaviour
 
         if (plantFarmActive != false)
         {
-            //funcTime += 0.005f;
+            //funcTime += 0.020f;
             PlantTiming();
         }
 
         if (animalFarmActive != false)
         {
-            //funcTime1 += 0.005f;
+            //funcTime1 += 0.020f;
             AnimalsTiming();
         }
 
@@ -308,7 +349,7 @@ public class GameControl : MonoBehaviour
             }
             else
             {
-                secretTime += 0.005f;
+                secretTime += 0.020f;
             }
         }
 
@@ -317,8 +358,9 @@ public class GameControl : MonoBehaviour
             ValueOfPlayerMoney = 0;
         }
 
-        if (ValueOfPlayerLevel > 20)
+        if (ValueOfPlayerLevel >= 20)
         {
+            EndGame[0].SetActive(true);
             ValueOfPlayerLevel = 20;
         }
 
@@ -363,6 +405,7 @@ public class GameControl : MonoBehaviour
             reGame = true;
             if (reGame != false && reGameAmount == 1)
             {
+                audioManager.PlaySFX(audioManager.Pop2);
                 alert[1].SetActive(true);
                 alert[10].SetActive(true);
                 StartCoroutine(ResetGame());
@@ -388,12 +431,20 @@ public class GameControl : MonoBehaviour
         }
     }
 
+    public void Setting()
+    {
+        pause.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+
     public void BuyArea()
     {
         if (ValueOfPlayerMoney >= (ulong)AreaPriceUpdate)
         {
             alert[2].SetActive(false);
             alert[1].SetActive(false);
+            audioManager.PlaySFX(audioManager.Buy);
             ValueOfPlayerMoney -= (ulong)AreaPriceUpdate;
             AreaPriceUpdate *= 3;
             AreaUnlocked++;
@@ -401,6 +452,7 @@ public class GameControl : MonoBehaviour
         }
         else
         {
+            audioManager.PlaySFX(audioManager.Pop2);
             alert[2].SetActive(false);
             alert[3].SetActive(true);
         }
@@ -425,7 +477,7 @@ public class GameControl : MonoBehaviour
 
     private void AreaUnlock()
     {
-
+        audioManager.PlaySFX(audioManager.Unlock);
         anim[1] = AreaLock[ValueIndexOfObject].GetComponent<Animator>();
         anim[1].SetTrigger("isFadeout");
         Area[ValueIndexOfObject].color = Unlock;
@@ -450,6 +502,7 @@ public class GameControl : MonoBehaviour
         }
         else
         {
+            audioManager.PlaySFX(audioManager.Pop2);
             alert[1].SetActive(true);
             alert[10].SetActive(true);
             StartCoroutine(ResetGame());
@@ -548,6 +601,7 @@ public class GameControl : MonoBehaviour
         {
             if (playerlevel < arealevel)
             {
+                audioManager.PlaySFX(audioManager.Denied);
                 alert[0].SetActive(true);
             }
             else
@@ -555,11 +609,13 @@ public class GameControl : MonoBehaviour
                 ValueIndexOfObject = level;
                 if (AreaUnlocked < level)
                 {
+                    audioManager.PlaySFX(audioManager.Denied);
                     alert[5].SetActive(true);
                     ArrowPoint[AreaUnlocked].SetActive(true) ;
                 }
                 else
                 {
+                    audioManager.PlaySFX(audioManager.Pop2);
                     alert[1].SetActive(true);
                     alert[2].SetActive(true);
 
@@ -582,10 +638,12 @@ public class GameControl : MonoBehaviour
         {
             if (playerlevel < animallevel)
             {
+                audioManager.PlaySFX(audioManager.Denied);
                 alert[0].SetActive(true);
             }
             else
             {
+                audioManager.PlaySFX(audioManager.Pop2);
                 alert[1].SetActive(true);
                 alert[2].SetActive(true);
             }
@@ -594,16 +652,19 @@ public class GameControl : MonoBehaviour
         {
             if (playerlevel < seedslevel)
             {
+                audioManager.PlaySFX(audioManager.Denied);
                 alert[0].SetActive(true);
             }
             else
             {
+                audioManager.PlaySFX(audioManager.Pop2);
                 alert[1].SetActive(true);
                 alert[2].SetActive(true);
             }
         }
         else
         {
+            audioManager.PlaySFX(audioManager.Pop2);
             alert[1].SetActive(true);
             alert[10].SetActive(true);
             StartCoroutine(ResetGame());
@@ -628,6 +689,7 @@ public class GameControl : MonoBehaviour
         }
         else
         {
+            audioManager.PlaySFX(audioManager.Pop2);
             alert[1].SetActive(true);
             alert[10].SetActive(true);
             StartCoroutine(ResetGame());
@@ -699,6 +761,7 @@ public class GameControl : MonoBehaviour
                 {
                     if (shoplist == false && fence == true || shoplist == false && pond == true)
                     {
+                        audioManager.PlaySFX(audioManager.Pop2);
                         alert[1].SetActive(true);
                         alert[10].SetActive(true);
                         StartCoroutine(ResetGame());
@@ -770,6 +833,7 @@ public class GameControl : MonoBehaviour
     {
         if (ValueOfPlayerMoney >= (ulong)price)
         {
+            audioManager.PlaySFX(audioManager.Buy);
             ValueOfPlayerMoney -= (ulong)price;
             QuantityOfPlayerItems(ItemsName);
         }
@@ -777,6 +841,7 @@ public class GameControl : MonoBehaviour
         {
             ShopPriceUpdate = price;
             //SetTextStatus();
+            audioManager.PlaySFX(audioManager.Pop2);
             alert[1].SetActive(true);
             alert[3].SetActive(true);
         }
@@ -872,6 +937,7 @@ public class GameControl : MonoBehaviour
         }
         else
         {
+            audioManager.PlaySFX(audioManager.Pop2);
             alert[1].SetActive(true);
             alert[10].SetActive(true);
             StartCoroutine(ResetGame());
@@ -909,6 +975,7 @@ public class GameControl : MonoBehaviour
             }
             else
             {
+                audioManager.PlaySFX(audioManager.Pop2);
                 alert[1].SetActive(true);
                 alert[10].SetActive(true);
                 StartCoroutine(ResetGame());
@@ -1018,6 +1085,7 @@ public class GameControl : MonoBehaviour
                 Inventorys[9] += qtt;
                 break;
             default:
+                audioManager.PlaySFX(audioManager.Pop2);
                 alert[1].SetActive(true);
                 alert[10].SetActive(true);
                 StartCoroutine(ResetGame());
@@ -1052,6 +1120,7 @@ public class GameControl : MonoBehaviour
             }
             else
             {
+                audioManager.PlaySFX(audioManager.Pop2);
                 alert[4].SetActive(false);
                 alert[6].SetActive(true);
             }
@@ -1062,6 +1131,7 @@ public class GameControl : MonoBehaviour
             //Star shop
             if (ValueOfPlayerStar >= AmountOfExchangeStar && AmountOfExchangeStar != 0)
             {
+                audioManager.PlaySFX(audioManager.Buy);
                 ValueOfPlayerStar -= (int)AmountOfExchangeStar;
                 ValueOfPlayerMoney += (ulong)MoneyAmountExchanged;
                 AmountOfExchangeStar = 0;
@@ -1073,10 +1143,12 @@ public class GameControl : MonoBehaviour
 
                 if (AmountOfExchangeStar <= 0)
                 {
+                    audioManager.PlaySFX(audioManager.Pop2);
                     alert[7].SetActive(true);
                 }
                 else
                 {
+                    audioManager.PlaySFX(audioManager.Pop2);
                     //alert[4].SetActive(false);
                     alert[6].SetActive(true);
                     AmountOfExchangeStar = 0;
@@ -1131,6 +1203,7 @@ public class GameControl : MonoBehaviour
                         ItemPriceUpdate[p] = UnityEngine.Random.Range(seedsprice[3] - 40, seedsprice[3] + 40 + 1);
                         break;
                     default:
+                        audioManager.PlaySFX(audioManager.Pop2);
                         alert[1].SetActive(true);
                         alert[10].SetActive(true);
                         StartCoroutine(ResetGame());
@@ -1140,7 +1213,7 @@ public class GameControl : MonoBehaviour
         }
         else
         {
-            STime += 0.005f;
+            STime += 0.020f;
         }
     }
 
@@ -1156,18 +1229,21 @@ public class GameControl : MonoBehaviour
             }
             else if (ThingsAmount <= 0)
             {
+                audioManager.PlaySFX(audioManager.Pop2);
                 alert[1].SetActive(true);
                 alert[8].SetActive(false);
                 alert[11].SetActive(true);
             }
             else
             {
+                audioManager.PlaySFX(audioManager.Pop2);
                 alert[1].SetActive(true);
                 alert[9].SetActive(true);
             }
         }
         else
         {
+            audioManager.PlaySFX(audioManager.Pop2);
             alert[1].SetActive(true);
             alert[10].SetActive(true);
             StartCoroutine(ResetGame());
@@ -1206,6 +1282,7 @@ public class GameControl : MonoBehaviour
 
             if (ThingsAmount >= Inventorys[rtval])
             {
+                audioManager.PlaySFX(audioManager.Pop2);
                 alert[8].SetActive(false);
                 alert[1].SetActive(true);
                 alert[9].SetActive(true);
@@ -1250,6 +1327,7 @@ public class GameControl : MonoBehaviour
         }
         else
         {
+            audioManager.PlaySFX(audioManager.Pop2);
             alert[1].SetActive(true);
             alert[10].SetActive(true);
             StartCoroutine(ResetGame());
@@ -1273,6 +1351,7 @@ public class GameControl : MonoBehaviour
         }
         else
         {
+            audioManager.PlaySFX(audioManager.Pop2);
             alert[1].SetActive(true);
             alert[10].SetActive(true);
             StartCoroutine(ResetGame());
@@ -1350,6 +1429,7 @@ public class GameControl : MonoBehaviour
     {
         if (plant != false)
         {
+            audioManager.PlaySFX(audioManager.Planting);
             Planting();
         }
         else if (animals != false)
@@ -1358,6 +1438,7 @@ public class GameControl : MonoBehaviour
         }
         else
         {
+            audioManager.PlaySFX(audioManager.Pop2);
             alert[1].SetActive(true);
             alert[10].SetActive(true);
             StartCoroutine(ResetGame());
@@ -1473,6 +1554,7 @@ public class GameControl : MonoBehaviour
                 areaNumbersEnd = 15;
                 break;
             default:
+                audioManager.PlaySFX(audioManager.Pop2);
                 alert[1].SetActive(true);
                 alert[10].SetActive(true);
                 StartCoroutine(ResetGame());
@@ -1499,6 +1581,7 @@ public class GameControl : MonoBehaviour
 
         if (val >  9) 
         {
+            audioManager.PlaySFX(audioManager.Pop2);
             alert[1].SetActive(true);
             alert[10].SetActive(true);
             StartCoroutine(ResetGame());
@@ -1591,6 +1674,7 @@ public class GameControl : MonoBehaviour
         }
         else
         {
+            audioManager.PlaySFX(audioManager.Pop2);
             alert[1].SetActive(true);
             alert[10].SetActive(true);
             StartCoroutine(ResetGame());
@@ -1617,6 +1701,7 @@ public class GameControl : MonoBehaviour
         rtval = val;
         if (shoplist != false)
         {
+            audioManager.PlaySFX(audioManager.Pop2);
             GameObject.Find("UI 2/Bag").SetActive(false);
             alert[1].SetActive(true);
             alert[8].SetActive(true);
@@ -1666,18 +1751,21 @@ public class GameControl : MonoBehaviour
                     }
                     else
                     {
+                        audioManager.PlaySFX(audioManager.Pop2);
                         alert[1].SetActive(true);
                         alert[13].SetActive(true);
                     }
                 }
                 else
                 {
+                    audioManager.PlaySFX(audioManager.Pop2);
                     alert[1].SetActive(true);
                     alert[12].SetActive(true);
                 }
             }
             else
             {
+                audioManager.PlaySFX(audioManager.Pop2);
                 alert[1].SetActive(true);
                 alert[10].SetActive(true);
                 StartCoroutine(ResetGame());
@@ -1810,6 +1898,7 @@ public class GameControl : MonoBehaviour
             }
             else
             {
+                audioManager.PlaySFX(audioManager.Pop2);
                 alert[1].SetActive(true);
                 alert[10].SetActive(true);
                 StartCoroutine(ResetGame());
@@ -1828,21 +1917,25 @@ public class GameControl : MonoBehaviour
                     case "Fish":
                         if (QtSlotA == 1)
                         {
+                            audioManager.PlaySFX(audioManager.Fish);
                             animalObj[8].SetActive(true);
                         }
                         else if (QtSlotA == 2)
                         {
+                            audioManager.PlaySFX(audioManager.Fish);
                             animalObj[8].SetActive(true);
                             animalObj[9].SetActive(true);
                         }
                         else if (QtSlotA == 3)
                         {
+                            audioManager.PlaySFX(audioManager.Fish);
                             animalObj[8].SetActive(true);
                             animalObj[9].SetActive(true);
                             animalObj[10].SetActive(true);
                         }
                         else if (QtSlotA == 4)
                         {
+                            audioManager.PlaySFX(audioManager.Fish);
                             animalObj[8].SetActive(true);
                             animalObj[9].SetActive(true);
                             animalObj[10].SetActive(true);
@@ -1850,6 +1943,7 @@ public class GameControl : MonoBehaviour
                         }
                         else if (QtSlotA >= 5)
                         {
+                            audioManager.PlaySFX(audioManager.Fish);
                             animalObj[8].SetActive(true);
                             animalObj[9].SetActive(true);
                             animalObj[10].SetActive(true);
@@ -1858,6 +1952,7 @@ public class GameControl : MonoBehaviour
                         }
                         else
                         {
+                            audioManager.PlaySFX(audioManager.Pop2);
                             alert[1].SetActive(true);
                             alert[10].SetActive(true);
                             StartCoroutine(ResetGame());
@@ -1868,6 +1963,7 @@ public class GameControl : MonoBehaviour
                         animalFarmActive = true;
                         break;
                     case "Chicken":
+                        audioManager.PlaySFX(audioManager.Chicken);
                         animalObj[l].gameObject.SetActive(true);
                         animalObj[l].GetComponent<Animator>().runtimeAnimatorController = animalAnimControl[0];
                         AnimalA[l] = ReObjectName(1).ToString();
@@ -1876,6 +1972,7 @@ public class GameControl : MonoBehaviour
                         animalFarmActive = true;
                         break;
                     case "Pig":
+                        audioManager.PlaySFX(audioManager.Pig);
                         animalObj[l].gameObject.SetActive(true);
                         animalObj[l].GetComponent<Animator>().runtimeAnimatorController = animalAnimControl[1];
                         AnimalA[l] = ReObjectName(2).ToString();
@@ -1884,6 +1981,7 @@ public class GameControl : MonoBehaviour
                         animalFarmActive = true;
                         break;
                     case "Buffalo":
+                        audioManager.PlaySFX(audioManager.Buffalo);
                         animalObj[l].gameObject.SetActive(true);
                         animalObj[l].GetComponent<Animator>().runtimeAnimatorController = animalAnimControl[2];
                         AnimalA[l] = ReObjectName(3).ToString();
@@ -1892,6 +1990,7 @@ public class GameControl : MonoBehaviour
                         animalFarmActive = true;
                         break;
                     case "Cow":
+                        audioManager.PlaySFX(audioManager.Cow);
                         animalObj[l].gameObject.SetActive(true);
                         animalObj[l].GetComponent<Animator>().runtimeAnimatorController = animalAnimControl[3];
                         AnimalA[l] = ReObjectName(4).ToString();
@@ -1902,14 +2001,17 @@ public class GameControl : MonoBehaviour
                     case "Horse":
                         if (l == 0)
                         {
+                            audioManager.PlaySFX(audioManager.Horse);
                             animalObj[4].gameObject.SetActive(true);
                         }
                         else if (l == 2)
                         {
+                            audioManager.PlaySFX(audioManager.Horse);
                             animalObj[6].gameObject.SetActive(true);
                         }
                         else
                         {
+                            audioManager.PlaySFX(audioManager.Pop2);
                             alert[1].SetActive(true);
                             alert[10].SetActive(true);
                             StartCoroutine(ResetGame());
@@ -1937,6 +2039,7 @@ public class GameControl : MonoBehaviour
                         animalFarmActive = true;
                         break;
                     case "Chicken":
+                        audioManager.PlaySFX(audioManager.Chicken);
                         animalObj[l].gameObject.SetActive(true);
                         animalObj[l].GetComponent<Animator>().runtimeAnimatorController = animalAnimControl[0];
                         AnimalB[l] = ReObjectName(1).ToString();
@@ -1945,6 +2048,7 @@ public class GameControl : MonoBehaviour
                         animalFarmActive = true;
                         break;
                     case "Pig":
+                        audioManager.PlaySFX(audioManager.Pig);
                         animalObj[l].gameObject.SetActive(true);
                         animalObj[l].GetComponent<Animator>().runtimeAnimatorController = animalAnimControl[1];
                         AnimalB[l] = ReObjectName(2).ToString();
@@ -1953,6 +2057,7 @@ public class GameControl : MonoBehaviour
                         animalFarmActive = true;
                         break;
                     case "Buffalo":
+                        audioManager.PlaySFX(audioManager.Buffalo);
                         animalObj[l].gameObject.SetActive(true);
                         animalObj[l].GetComponent<Animator>().runtimeAnimatorController = animalAnimControl[2];
                         AnimalB[l] = ReObjectName(3).ToString();
@@ -1961,6 +2066,7 @@ public class GameControl : MonoBehaviour
                         animalFarmActive = true;
                         break;
                     case "Cow":
+                        audioManager.PlaySFX(audioManager.Cow);
                         animalObj[l].gameObject.SetActive(true);
                         animalObj[l].GetComponent<Animator>().runtimeAnimatorController = animalAnimControl[3];
                         AnimalB[l] = ReObjectName(4).ToString();
@@ -1971,14 +2077,17 @@ public class GameControl : MonoBehaviour
                     case "Horse":
                         if (l == 1)
                         {
+                            audioManager.PlaySFX(audioManager.Horse);
                             animalObj[5].gameObject.SetActive(true);
                         }
                         else if (l == 3)
                         {
+                            audioManager.PlaySFX(audioManager.Horse);
                             animalObj[7].gameObject.SetActive(true);
                         }
                         else
                         {
+                            audioManager.PlaySFX(audioManager.Pop2);
                             alert[1].SetActive(true);
                             alert[10].SetActive(true);
                             StartCoroutine(ResetGame());
@@ -2229,7 +2338,7 @@ public class GameControl : MonoBehaviour
     {
         if (animalarea[4] != false && animalQt[4] >= 1 && animalQt[5] == 0)
         {
-            time[8] += 0.005f;
+            time[8] += 0.020f;
             switch (AnimalA[4])
             {
                 case "Fish":
@@ -2238,11 +2347,13 @@ public class GameControl : MonoBehaviour
                         animalFarmMoney[0] += (ulong)UnityEngine.Random.Range(30 + ValueOfPlayerLevel, 130 + ValueOfPlayerLevel + 1) * (ulong)animalQt[4];
                         Block[10].SetActive(true);
                         time[8] = 0f;
+                        audioManager.PlaySFX(audioManager.Pop);
                         Cloud[5].SetActive(true);
                         animalarea[4] = false;
                     }
                     break;
                 default:
+                    audioManager.PlaySFX(audioManager.Pop2);
                     alert[1].SetActive(true);
                     alert[10].SetActive(true);
                     StartCoroutine(ResetGame());
@@ -2252,7 +2363,7 @@ public class GameControl : MonoBehaviour
         }
         else if (animalObj[8].activeSelf && animalarea[4] != false)
         {
-            time[8] += 0.005f;
+            time[8] += 0.020f;
 
             if (animalQt[4] >= 1 && animalQt[5] >= 1)
             {
@@ -2265,6 +2376,7 @@ public class GameControl : MonoBehaviour
                         }
                         break;
                     default:
+                        audioManager.PlaySFX(audioManager.Pop2);
                         alert[1].SetActive(true);
                         alert[10].SetActive(true);
                         StartCoroutine(ResetGame());
@@ -2278,12 +2390,14 @@ public class GameControl : MonoBehaviour
                         {
                             animalFarmMoney[0] += (ulong)UnityEngine.Random.Range(30 + ValueOfPlayerLevel, 130 + ValueOfPlayerLevel + 1) * (ulong)animalQt[5];
                             Block[10].SetActive(true);
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[5].SetActive(true);
                             time[8] = 0f;
                             animalarea[4] = false;
                         }
                         break;
                     default:
+                        audioManager.PlaySFX(audioManager.Pop2);
                         alert[1].SetActive(true);
                         alert[10].SetActive(true);
                         StartCoroutine(ResetGame());
@@ -2293,6 +2407,7 @@ public class GameControl : MonoBehaviour
 
             else
             {
+                audioManager.PlaySFX(audioManager.Pop2);
                 alert[1].SetActive(true);
                 alert[10].SetActive(true);
                 StartCoroutine(ResetGame());
@@ -2306,6 +2421,8 @@ public class GameControl : MonoBehaviour
         {
             if (time[9] >= 15.0f && time[9] <= 15.1f)
             {
+                audioManager.PlaySFX(audioManager.Pop);
+
                 switch (AnimalA[0])
                 {
                     case "Chicken":
@@ -2324,6 +2441,7 @@ public class GameControl : MonoBehaviour
                         animalFarmMoney[1] += (ulong)UnityEngine.Random.Range(1480 + ValueOfPlayerLevel, 4980 + ValueOfPlayerLevel + 1) * (ulong)animalQt[0];
                         break;
                     default:
+                        audioManager.PlaySFX(audioManager.Pop2);
                         alert[1].SetActive(true);
                         alert[10].SetActive(true);
                         StartCoroutine(ResetGame());
@@ -2368,6 +2486,7 @@ public class GameControl : MonoBehaviour
                         animalarea[0] = false;
                         break;
                     default:
+                        audioManager.PlaySFX(audioManager.Pop2);
                         alert[1].SetActive(true);
                         alert[10].SetActive(true);
                         StartCoroutine(ResetGame());
@@ -2376,17 +2495,19 @@ public class GameControl : MonoBehaviour
             }
             else
             {
-                time[9] += 0.005f;
+                time[9] += 0.020f;
             }
         }
             
         else if (animalObj[0].activeSelf && !animalObj[1].activeSelf && !animalObj[4].activeSelf && !animalObj[5].activeSelf && animalarea[0] != false
                  || animalObj[4].activeSelf && !animalObj[0].activeSelf && !animalObj[1].activeSelf && !animalObj[5].activeSelf && animalarea[0] != false)
         {
-            time[9] += 0.005f;
+            time[9] += 0.020f;
 
             if (time[9] >= 15.0f && time[9] <= 15.1f)
             {
+
+                audioManager.PlaySFX(audioManager.Pop);
 
                 switch (AnimalA[0])
                 {
@@ -2426,6 +2547,7 @@ public class GameControl : MonoBehaviour
                         animalarea[0] = false;
                         break;
                     default:
+                        audioManager.PlaySFX(audioManager.Pop2);
                         alert[1].SetActive(true);
                         alert[10].SetActive(true);
                         StartCoroutine(ResetGame());
@@ -2434,7 +2556,7 @@ public class GameControl : MonoBehaviour
             }
             else
             {
-                time[9] += 0.005f;
+                time[9] += 0.020f;
             }
         }
 
@@ -2443,10 +2565,12 @@ public class GameControl : MonoBehaviour
             || !animalObj[3].activeSelf && animalObj[2].activeSelf && animalObj[7].activeSelf && !animalObj[6].activeSelf && animalarea[2] != false
             || animalObj[6].activeSelf && animalObj[7].activeSelf && !animalObj[2].activeSelf && !animalObj[3].activeSelf && animalarea[2] != false)
         {
-            time[10] += 0.005f;
+            time[10] += 0.020f;
 
             if (time[10] >= 15.0f && time[10] <= 15.1f)
             {
+
+                audioManager.PlaySFX(audioManager.Pop);
 
                 switch (AnimalA[2])
                 {
@@ -2466,6 +2590,7 @@ public class GameControl : MonoBehaviour
                         animalFarmMoney[2] += (ulong)UnityEngine.Random.Range(1480 + ValueOfPlayerLevel, 4980 + ValueOfPlayerLevel + 1) * (ulong)animalQt[2];
                         break;
                     default:
+                        audioManager.PlaySFX(audioManager.Pop2);
                         alert[1].SetActive(true);
                         alert[10].SetActive(true);
                         StartCoroutine(ResetGame());
@@ -2510,6 +2635,7 @@ public class GameControl : MonoBehaviour
                         animalarea[2] = false;
                         break;
                     default:
+                        audioManager.PlaySFX(audioManager.Pop2);
                         alert[1].SetActive(true);
                         alert[10].SetActive(true);
                         StartCoroutine(ResetGame());
@@ -2518,7 +2644,7 @@ public class GameControl : MonoBehaviour
             }
             else
             {
-                time[10] += 0.005f;
+                time[10] += 0.020f;
             }
         }
         else if (animalObj[2].activeSelf && !animalObj[3].activeSelf && !animalObj[6].activeSelf && !animalObj[7].activeSelf && animalarea[2] != false
@@ -2527,6 +2653,8 @@ public class GameControl : MonoBehaviour
 
             if (time[10] >= 15.0f && time[10] <= 15.1f)
             {
+
+                audioManager.PlaySFX(audioManager.Pop);
 
                 switch (AnimalA[2])
                 {
@@ -2566,6 +2694,7 @@ public class GameControl : MonoBehaviour
                         animalarea[2] = false;
                         break;
                     default:
+                        audioManager.PlaySFX(audioManager.Pop2);
                         alert[1].SetActive(true);
                         alert[10].SetActive(true);
                         StartCoroutine(ResetGame());
@@ -2574,7 +2703,7 @@ public class GameControl : MonoBehaviour
             }
             else
             {
-                time[10] += 0.005f;
+                time[10] += 0.020f;
             }
         }
     }
@@ -2585,7 +2714,7 @@ public class GameControl : MonoBehaviour
 
         if (plants[0].gameObject.activeSelf && plants[1].gameObject.activeSelf && plantarea[0] != false)
         {
-            time[0] += 0.005f;
+            time[0] += 0.020f;
 
             if (time[0] >= 10.0f && time[0] <= 10.1f)
             {
@@ -2658,21 +2787,25 @@ public class GameControl : MonoBehaviour
                         case "Carrot":
                             plants[1].GetComponent<Image>().sprite = CarrotGrow[2];
                             plantsGrowLevel[1] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[0].SetActive(true);
                             break;
                         case "Corn":
                             plants[1].GetComponent<Image>().sprite = CornGrow[2];
                             plantsGrowLevel[1] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[0].SetActive(true);
                             break;
                         case "Radish":
                             plants[1].GetComponent<Image>().sprite = RadishGrow[2];
                             plantsGrowLevel[1] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[0].SetActive(true);
                             break;
                         case "Turnip":
                             plants[1].GetComponent<Image>().sprite = TurnipGrow[2];
                             plantsGrowLevel[1] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[0].SetActive(true);
                             break;
                     }
@@ -2684,7 +2817,7 @@ public class GameControl : MonoBehaviour
 
         else if (plants[0].gameObject.activeSelf && !plants[1].gameObject.activeSelf && plantarea[0] != false)
         {
-            time[0] += 0.005f;
+            time[0] += 0.020f;
 
             if (time[0] >= 10.0f && time[0] <= 10.1f)
             {
@@ -2717,21 +2850,25 @@ public class GameControl : MonoBehaviour
                         case "Carrot":
                             plants[0].GetComponent<Image>().sprite = CarrotGrow[2];
                             plantsGrowLevel[0] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[0].SetActive(true);
                             break;
                         case "Corn":
                             plants[0].GetComponent<Image>().sprite = CornGrow[2];
                             plantsGrowLevel[0] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[0].SetActive(true);
                             break;
                         case "Radish":
                             plants[0].GetComponent<Image>().sprite = RadishGrow[2];
                             plantsGrowLevel[0] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[0].SetActive(true);
                             break;
                         case "Turnip":
                             plants[0].GetComponent<Image>().sprite = TurnipGrow[2];
                             plantsGrowLevel[0] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[0].SetActive(true);
                             break;
                     }
@@ -2745,7 +2882,7 @@ public class GameControl : MonoBehaviour
 
         if (plants[2].gameObject.activeSelf && plants[3].gameObject.activeSelf && plantarea[2] != false)
         {
-            time[1] += 0.005f;
+            time[1] += 0.020f;
 
             if (time[1] >= 10.0f && time[1] <= 10.1f)
             {
@@ -2818,21 +2955,25 @@ public class GameControl : MonoBehaviour
                         case "Carrot":
                             plants[3].GetComponent<Image>().sprite = CarrotGrow[2];
                             plantsGrowLevel[3] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[1].SetActive(true);
                             break;
                         case "Corn":
                             plants[3].GetComponent<Image>().sprite = CornGrow[2];
                             plantsGrowLevel[3] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[1].SetActive(true);
                             break;
                         case "Radish":
                             plants[3].GetComponent<Image>().sprite = RadishGrow[2];
                             plantsGrowLevel[3] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[1].SetActive(true);
                             break;
                         case "Turnip":
                             plants[3].GetComponent<Image>().sprite = TurnipGrow[2];
                             plantsGrowLevel[3] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[1].SetActive(true);
                             break;
                     }
@@ -2844,7 +2985,7 @@ public class GameControl : MonoBehaviour
 
         else if (plants[2].gameObject.activeSelf && !plants[3].gameObject.activeSelf && plantarea[2] != false)
         {
-            time[1] += 0.005f;
+            time[1] += 0.020f;
 
             if (time[1] >= 10.0f && time[1] <= 10.1f)
             {
@@ -2877,21 +3018,25 @@ public class GameControl : MonoBehaviour
                         case "Carrot":
                             plants[2].GetComponent<Image>().sprite = CarrotGrow[2];
                             plantsGrowLevel[2] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[1].SetActive(true);
                             break;
                         case "Corn":
                             plants[2].GetComponent<Image>().sprite = CornGrow[2];
                             plantsGrowLevel[2] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[1].SetActive(true);
                             break;
                         case "Radish":
                             plants[2].GetComponent<Image>().sprite = RadishGrow[2];
                             plantsGrowLevel[2] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[1].SetActive(true);
                             break;
                         case "Turnip":
                             plants[2].GetComponent<Image>().sprite = TurnipGrow[2];
                             plantsGrowLevel[2] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[1].SetActive(true);
                             break;
                     }
@@ -2905,7 +3050,7 @@ public class GameControl : MonoBehaviour
 
         if (plants[4].gameObject.activeSelf && plants[5].gameObject.activeSelf && plantarea[4] != false)
         {
-            time[2] += 0.005f;
+            time[2] += 0.020f;
 
             if (time[2] >= 10.0f && time[2] <= 10.1f)
             {
@@ -2978,21 +3123,25 @@ public class GameControl : MonoBehaviour
                         case "Carrot":
                             plants[5].GetComponent<Image>().sprite = CarrotGrow[2];
                             plantsGrowLevel[5] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[2].SetActive(true);
                             break;
                         case "Corn":
                             plants[5].GetComponent<Image>().sprite = CornGrow[2];
                             plantsGrowLevel[5] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[2].SetActive(true);
                             break;
                         case "Radish":
                             plants[5].GetComponent<Image>().sprite = RadishGrow[2];
                             plantsGrowLevel[5] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[2].SetActive(true);
                             break;
                         case "Turnip":
                             plants[5].GetComponent<Image>().sprite = TurnipGrow[2];
                             plantsGrowLevel[5] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[2].SetActive(true);
                             break;
                     }
@@ -3004,7 +3153,7 @@ public class GameControl : MonoBehaviour
 
         else if (plants[4].gameObject.activeSelf && !plants[5].gameObject.activeSelf && plantarea[4] != false)
         {
-            time[2] += 0.005f;
+            time[2] += 0.020f;
 
             if (time[2] >= 10.0f && time[2] <= 10.1f)
             {
@@ -3037,21 +3186,25 @@ public class GameControl : MonoBehaviour
                         case "Carrot":
                             plants[4].GetComponent<Image>().sprite = CarrotGrow[2];
                             plantsGrowLevel[4] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[2].SetActive(true);
                             break;
                         case "Corn":
                             plants[4].GetComponent<Image>().sprite = CornGrow[2];
                             plantsGrowLevel[4] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[2].SetActive(true);
                             break;
                         case "Radish":
                             plants[4].GetComponent<Image>().sprite = RadishGrow[2];
                             plantsGrowLevel[4] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[2].SetActive(true);
                             break;
                         case "Turnip":
                             plants[4].GetComponent<Image>().sprite = TurnipGrow[2];
                             plantsGrowLevel[4] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[2].SetActive(true);
                             break;
                     }
@@ -3065,7 +3218,7 @@ public class GameControl : MonoBehaviour
 
         if (plants[6].gameObject.activeSelf && plants[7].gameObject.activeSelf && plantarea[6] != false)
         {
-            time[3] += 0.005f;
+            time[3] += 0.020f;
 
             if (time[3] >= 10.0f && time[3] <= 10.1f)
             {
@@ -3138,21 +3291,25 @@ public class GameControl : MonoBehaviour
                         case "Carrot":
                             plants[7].GetComponent<Image>().sprite = CarrotGrow[2];
                             plantsGrowLevel[7] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[3].SetActive(true);
                             break;
                         case "Corn":
                             plants[7].GetComponent<Image>().sprite = CornGrow[2];
                             plantsGrowLevel[7] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[3].SetActive(true);
                             break;
                         case "Radish":
                             plants[7].GetComponent<Image>().sprite = RadishGrow[2];
                             plantsGrowLevel[7] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[3].SetActive(true);
                             break;
                         case "Turnip":
                             plants[7].GetComponent<Image>().sprite = TurnipGrow[2];
                             plantsGrowLevel[7] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[3].SetActive(true);
                             break;
                     }
@@ -3164,7 +3321,7 @@ public class GameControl : MonoBehaviour
 
         else if (plants[6].gameObject.activeSelf && !plants[7].gameObject.activeSelf && plantarea[6] != false)
         {
-            time[3] += 0.005f;
+            time[3] += 0.020f;
 
             if (time[3] >= 10.0f && time[3] <= 10.1f)
             {
@@ -3197,21 +3354,25 @@ public class GameControl : MonoBehaviour
                         case "Carrot":
                             plants[6].GetComponent<Image>().sprite = CarrotGrow[2];
                             plantsGrowLevel[6] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[3].SetActive(true);
                             break;
                         case "Corn":
                             plants[6].GetComponent<Image>().sprite = CornGrow[2];
                             plantsGrowLevel[6] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[3].SetActive(true);
                             break;
                         case "Radish":
                             plants[6].GetComponent<Image>().sprite = RadishGrow[2];
                             plantsGrowLevel[6] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[3].SetActive(true);
                             break;
                         case "Turnip":
                             plants[6].GetComponent<Image>().sprite = TurnipGrow[2];
                             plantsGrowLevel[6] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[3].SetActive(true);
                             break;
                     }
@@ -3226,7 +3387,7 @@ public class GameControl : MonoBehaviour
 
         if (plants[8].gameObject.activeSelf && plants[9].gameObject.activeSelf && plantarea[8] != false)
         {
-            time[4] += 0.005f;
+            time[4] += 0.020f;
 
             if (time[4] >= 10.0f && time[4] <= 10.1f)
             {
@@ -3299,21 +3460,25 @@ public class GameControl : MonoBehaviour
                         case "Carrot":
                             plants[9].GetComponent<Image>().sprite = CarrotGrow[2];
                             plantsGrowLevel[9] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[4].SetActive(true);
                             break;
                         case "Corn":
                             plants[9].GetComponent<Image>().sprite = CornGrow[2];
                             plantsGrowLevel[9] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[4].SetActive(true);
                             break;
                         case "Radish":
                             plants[9].GetComponent<Image>().sprite = RadishGrow[2];
                             plantsGrowLevel[9] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[4].SetActive(true);
                             break;
                         case "Turnip":
                             plants[9].GetComponent<Image>().sprite = TurnipGrow[2];
                             plantsGrowLevel[9] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[4].SetActive(true);
                             break;
                     }
@@ -3325,7 +3490,7 @@ public class GameControl : MonoBehaviour
 
         else if (plants[8].gameObject.activeSelf && !plants[9].gameObject.activeSelf && plantarea[8] != false)
         {
-            time[4] += 0.005f;
+            time[4] += 0.020f;
 
             if (time[4] >= 10.0f && time[4] <= 10.1f)
             {
@@ -3358,21 +3523,25 @@ public class GameControl : MonoBehaviour
                         case "Carrot":
                             plants[8].GetComponent<Image>().sprite = CarrotGrow[2];
                             plantsGrowLevel[8] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[4].SetActive(true);
                             break;
                         case "Corn":
                             plants[8].GetComponent<Image>().sprite = CornGrow[2];
                             plantsGrowLevel[8] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[4].SetActive(true);
                             break;
                         case "Radish":
                             plants[8].GetComponent<Image>().sprite = RadishGrow[2];
                             plantsGrowLevel[8] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[4].SetActive(true);
                             break;
                         case "Turnip":
                             plants[8].GetComponent<Image>().sprite = TurnipGrow[2];
                             plantsGrowLevel[8] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[4].SetActive(true);
                             break;
                     }
@@ -3386,7 +3555,7 @@ public class GameControl : MonoBehaviour
 
         if (plants[10].gameObject.activeSelf && plants[11].gameObject.activeSelf && plantarea[10] != false)
         {
-            time[5] += 0.005f;
+            time[5] += 0.020f;
 
             if (time[5] >= 10.0f && time[5] <= 10.1f)
             {
@@ -3459,21 +3628,25 @@ public class GameControl : MonoBehaviour
                         case "Carrot":
                             plants[11].GetComponent<Image>().sprite = CarrotGrow[2];
                             plantsGrowLevel[10] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[6].SetActive(true);
                             break;
                         case "Corn":
                             plants[11].GetComponent<Image>().sprite = CornGrow[2];
                             plantsGrowLevel[10] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[6].SetActive(true);
                             break;
                         case "Radish":
                             plants[11].GetComponent<Image>().sprite = RadishGrow[2];
                             plantsGrowLevel[10] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[6].SetActive(true);
                             break;
                         case "Turnip":
                             plants[11].GetComponent<Image>().sprite = TurnipGrow[2];
                             plantsGrowLevel[10] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[6].SetActive(true);
                             break;
                     }
@@ -3485,7 +3658,7 @@ public class GameControl : MonoBehaviour
 
         else if (plants[10].gameObject.activeSelf && !plants[11].gameObject.activeSelf && plantarea[10] != false)
         {
-            time[5] += 0.005f;
+            time[5] += 0.020f;
 
             if (time[5] >= 10.0f && time[5] <= 10.1f)
             {
@@ -3518,21 +3691,25 @@ public class GameControl : MonoBehaviour
                         case "Carrot":
                             plants[10].GetComponent<Image>().sprite = CarrotGrow[2];
                             plantsGrowLevel[10] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[6].SetActive(true);
                             break;
                         case "Corn":
                             plants[10].GetComponent<Image>().sprite = CornGrow[2];
                             plantsGrowLevel[10] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[6].SetActive(true);
                             break;
                         case "Radish":
                             plants[10].GetComponent<Image>().sprite = RadishGrow[2];
                             plantsGrowLevel[10] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[6].SetActive(true);
                             break;
                         case "Turnip":
                             plants[10].GetComponent<Image>().sprite = TurnipGrow[2];
                             plantsGrowLevel[10] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[6].SetActive(true);
                             break;
                     }
@@ -3546,7 +3723,7 @@ public class GameControl : MonoBehaviour
 
         if (plants[12].gameObject.activeSelf && plants[13].gameObject.activeSelf && plantarea[12] != false)
         {
-            time[6] += 0.005f;
+            time[6] += 0.020f;
 
             if (time[6] >= 10.0f && time[6] <= 10.1f)
             {
@@ -3619,21 +3796,25 @@ public class GameControl : MonoBehaviour
                         case "Carrot":
                             plants[13].GetComponent<Image>().sprite = CarrotGrow[2];
                             plantsGrowLevel[13] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[8].SetActive(true);
                             break;
                         case "Corn":
                             plants[13].GetComponent<Image>().sprite = CornGrow[2];
                             plantsGrowLevel[13] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[8].SetActive(true);
                             break;
                         case "Radish":
                             plants[13].GetComponent<Image>().sprite = RadishGrow[2];
                             plantsGrowLevel[13] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[8].SetActive(true);
                             break;
                         case "Turnip":
                             plants[13].GetComponent<Image>().sprite = TurnipGrow[2];
                             plantsGrowLevel[13] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[8].SetActive(true);
                             break;
                     }
@@ -3645,7 +3826,7 @@ public class GameControl : MonoBehaviour
 
         else if (plants[12].gameObject.activeSelf && !plants[13].gameObject.activeSelf && plantarea[12] != false)
         {
-            time[6] += 0.005f;
+            time[6] += 0.020f;
 
             if (time[6] >= 10.0f && time[6] <= 10.1f)
             {
@@ -3678,21 +3859,25 @@ public class GameControl : MonoBehaviour
                         case "Carrot":
                             plants[12].GetComponent<Image>().sprite = CarrotGrow[2];
                             plantsGrowLevel[12] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[8].SetActive(true);
                             break;
                         case "Corn":
                             plants[12].GetComponent<Image>().sprite = CornGrow[2];
                             plantsGrowLevel[12] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[8].SetActive(true);
                             break;
                         case "Radish":
                             plants[12].GetComponent<Image>().sprite = RadishGrow[2];
                             plantsGrowLevel[12] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[8].SetActive(true);
                             break;
                         case "Turnip":
                             plants[12].GetComponent<Image>().sprite = TurnipGrow[2];
                             plantsGrowLevel[12] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[8].SetActive(true);
                             break;
                     }
@@ -3707,7 +3892,7 @@ public class GameControl : MonoBehaviour
 
         if (plants[14].gameObject.activeSelf && plants[15].gameObject.activeSelf && plantarea[14] != false)
         {
-            time[7] += 0.005f;
+            time[7] += 0.020f;
 
             if (time[7] >= 10.0f && time[7] <= 10.1f)
             {
@@ -3780,21 +3965,25 @@ public class GameControl : MonoBehaviour
                         case "Carrot":
                             plants[15].GetComponent<Image>().sprite = CarrotGrow[2];
                             plantsGrowLevel[15] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[10].SetActive(true);
                             break;
                         case "Corn":
                             plants[15].GetComponent<Image>().sprite = CornGrow[2];
                             plantsGrowLevel[15] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[10].SetActive(true);
                             break;
                         case "Radish":
                             plants[15].GetComponent<Image>().sprite = RadishGrow[2];
                             plantsGrowLevel[15] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[10].SetActive(true);
                             break;
                         case "Turnip":
                             plants[15].GetComponent<Image>().sprite = TurnipGrow[2];
                             plantsGrowLevel[15] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[10].SetActive(true);
                             break;
                     }
@@ -3806,7 +3995,7 @@ public class GameControl : MonoBehaviour
 
         else if (plants[14].gameObject.activeSelf && !plants[15].gameObject.activeSelf && plantarea[14] != false)
         {
-            time[7] += 0.005f;
+            time[7] += 0.020f;
 
             if (time[7] >= 10.0f && time[7] <= 10.1f)
             {
@@ -3839,21 +4028,25 @@ public class GameControl : MonoBehaviour
                         case "Carrot":
                             plants[14].GetComponent<Image>().sprite = CarrotGrow[2];
                             plantsGrowLevel[14] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[10].SetActive(true);
                             break;
                         case "Corn":
                             plants[14].GetComponent<Image>().sprite = CornGrow[2];
                             plantsGrowLevel[14] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[10].SetActive(true);
                             break;
                         case "Radish":
                             plants[14].GetComponent<Image>().sprite = RadishGrow[2];
                             plantsGrowLevel[14] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[10].SetActive(true);
                             break;
                         case "Turnip":
                             plants[14].GetComponent<Image>().sprite = TurnipGrow[2];
                             plantsGrowLevel[14] = 2;
+                            audioManager.PlaySFX(audioManager.Pop);
                             Cloud[10].SetActive(true);
                             break;
                     }
@@ -3927,6 +4120,8 @@ public class GameControl : MonoBehaviour
                             break;
                     }
 
+                    audioManager.PlaySFX(audioManager.PlantHarvest);
+                    audioManager.PlaySFX(audioManager.Money);
                     Block[0].SetActive(false);
                     MoneyUp[0].SetActive(true);
                     MoneyUpText[0].text = $"<color=green>{CurrencyTextFormat((ulong)plantFarmMoney[0])}</color>" + " BTH";
@@ -3973,6 +4168,7 @@ public class GameControl : MonoBehaviour
                                 break;
                         }
 
+                        audioManager.PlaySFX(audioManager.Star);
                         StarUp[0].SetActive(true);
                         StarUpText[0].gameObject.SetActive(true);
                         StarUpText[0].text = $"<color=yellow>{CurrencyTextFormat(plantFarmStar[0])}</color>";
@@ -4012,6 +4208,8 @@ public class GameControl : MonoBehaviour
                                 break;
                         }
 
+                        audioManager.PlaySFX(audioManager.PlantHarvest);
+                        audioManager.PlaySFX(audioManager.Money);
                         MoneyUp[0].SetActive(true);
                         MoneyUpText[0].text = $"<color=green>{CurrencyTextFormat((ulong)plantFarmMoney[0])}</color>" + " BTH";
                         ValueOfPlayerMoney += plantFarmMoney[0];
@@ -4039,6 +4237,7 @@ public class GameControl : MonoBehaviour
                                     break;
                             }
 
+                            audioManager.PlaySFX(audioManager.Star);
                             StarUp[0].SetActive(true);
                             StarUpText[0].gameObject.SetActive(true);
                             StarUpText[0].text = $"<color=yellow>{CurrencyTextFormat((ulong)plantFarmStar[0])}</color>";
@@ -4050,6 +4249,7 @@ public class GameControl : MonoBehaviour
             }
             else
             {
+                audioManager.PlaySFX(audioManager.Denied);
                 alert[14].SetActive(true);
             }
         }
@@ -4112,6 +4312,8 @@ public class GameControl : MonoBehaviour
                             break;
                     }
 
+                    audioManager.PlaySFX(audioManager.PlantHarvest);
+                    audioManager.PlaySFX(audioManager.Money);
                     MoneyUp[1].SetActive(true);
                     MoneyUpText[1].text = $"<color=green>{CurrencyTextFormat((ulong)plantFarmMoney[1])}</color>" + " BTH";
                     ValueOfPlayerMoney += plantFarmMoney[1];
@@ -4158,6 +4360,7 @@ public class GameControl : MonoBehaviour
                                 break;
                         }
 
+                        audioManager.PlaySFX(audioManager.Star);
                         StarUp[1].SetActive(true);
                         StarUpText[1].gameObject.SetActive(true);
                         StarUpText[1].text = $"<color=yellow>{CurrencyTextFormat((ulong)plantFarmStar[1])}</color>";
@@ -4193,6 +4396,8 @@ public class GameControl : MonoBehaviour
                                 break;
                         }
 
+                        audioManager.PlaySFX(audioManager.PlantHarvest);
+                        audioManager.PlaySFX(audioManager.Money);
                         MoneyUp[1].SetActive(true);
                         MoneyUpText[1].text = $"<color=green>{CurrencyTextFormat((ulong)plantFarmMoney[1])}</color>" + " BTH";
                         ValueOfPlayerMoney += plantFarmMoney[1];
@@ -4220,6 +4425,7 @@ public class GameControl : MonoBehaviour
                                     break;
                             }
 
+                            audioManager.PlaySFX(audioManager.Star);
                             StarUp[1].SetActive(true);
                             StarUpText[1].gameObject.SetActive(true);
                             StarUpText[1].text = $"<color=yellow>{CurrencyTextFormat((ulong)plantFarmStar[1])}</color>";
@@ -4231,6 +4437,7 @@ public class GameControl : MonoBehaviour
             }
             else
             {
+                audioManager.PlaySFX(audioManager.Denied);
                 alert[14].SetActive(true);
             }
         }
@@ -4297,6 +4504,8 @@ public class GameControl : MonoBehaviour
                             break;
                     }
 
+                    audioManager.PlaySFX(audioManager.PlantHarvest);
+                    audioManager.PlaySFX(audioManager.Money);
                     MoneyUp[2].SetActive(true);
                     MoneyUpText[2].text = $"<color=green>{CurrencyTextFormat((ulong)plantFarmMoney[2])}</color>" + " BTH";
                     ValueOfPlayerMoney += plantFarmMoney[2];
@@ -4343,6 +4552,7 @@ public class GameControl : MonoBehaviour
                                 break;
                         }
 
+                        audioManager.PlaySFX(audioManager.Star);
                         StarUp[2].SetActive(true);
                         StarUpText[2].gameObject.SetActive(true);
                         StarUpText[2].text = $"<color=yellow>{CurrencyTextFormat((ulong)plantFarmStar[2])}</color>";
@@ -4378,6 +4588,8 @@ public class GameControl : MonoBehaviour
                                 break;
                         }
 
+                        audioManager.PlaySFX(audioManager.PlantHarvest);
+                        audioManager.PlaySFX(audioManager.Money);
                         MoneyUp[2].SetActive(true);
                         MoneyUpText[2].text = $"<color=green>{CurrencyTextFormat((ulong)plantFarmMoney[2])}</color>" + " BTH";
                         ValueOfPlayerMoney += plantFarmMoney[2];
@@ -4405,6 +4617,7 @@ public class GameControl : MonoBehaviour
                                     break;
                             }
 
+                            audioManager.PlaySFX(audioManager.Star);
                             StarUp[2].SetActive(true);
                             StarUpText[2].gameObject.SetActive(true);
                             StarUpText[2].text = $"<color=yellow>{CurrencyTextFormat((ulong)plantFarmStar[2])}</color>";
@@ -4416,6 +4629,7 @@ public class GameControl : MonoBehaviour
             }
             else
             {
+                audioManager.PlaySFX(audioManager.Denied);
                 alert[14].SetActive(true);
             }
         }
@@ -4478,6 +4692,8 @@ public class GameControl : MonoBehaviour
                             break;
                     }
 
+                    audioManager.PlaySFX(audioManager.PlantHarvest);
+                    audioManager.PlaySFX(audioManager.Money);
                     MoneyUp[3].SetActive(true);
                     MoneyUpText[3].text = $"<color=green>{CurrencyTextFormat((ulong)plantFarmMoney[3])}</color>" + " BTH";
                     ValueOfPlayerMoney += plantFarmMoney[3];
@@ -4524,6 +4740,7 @@ public class GameControl : MonoBehaviour
                                 break;
                         }
 
+                        audioManager.PlaySFX(audioManager.Star);
                         StarUp[3].SetActive(true);
                         StarUpText[3].gameObject.SetActive(true);
                         StarUpText[3].text = $"<color=yellow>{CurrencyTextFormat((ulong)plantFarmStar[3])}</color>";
@@ -4559,6 +4776,8 @@ public class GameControl : MonoBehaviour
                                 break;
                         }
 
+                        audioManager.PlaySFX(audioManager.PlantHarvest);
+                        audioManager.PlaySFX(audioManager.Money);
                         MoneyUp[3].SetActive(true);
                         MoneyUpText[3].text = $"<color=green>{CurrencyTextFormat((ulong)plantFarmMoney[3])}</color>" + " BTH";
                         ValueOfPlayerMoney += plantFarmMoney[3];
@@ -4586,6 +4805,7 @@ public class GameControl : MonoBehaviour
                                     break;
                             }
 
+                            audioManager.PlaySFX(audioManager.Star);
                             StarUp[3].SetActive(true);
                             StarUpText[3].gameObject.SetActive(true);
                             StarUpText[3].text = $"<color=yellow>{CurrencyTextFormat((ulong)plantFarmStar[3])}</color>";
@@ -4597,6 +4817,7 @@ public class GameControl : MonoBehaviour
             }
             else
             {
+                audioManager.PlaySFX(audioManager.Denied);
                 alert[14].SetActive(true);
             }
         }
@@ -4659,6 +4880,8 @@ public class GameControl : MonoBehaviour
                             break;
                     }
 
+                    audioManager.PlaySFX(audioManager.PlantHarvest);
+                    audioManager.PlaySFX(audioManager.Money);
                     MoneyUp[4].SetActive(true);
                     MoneyUpText[4].text = $"<color=green>{CurrencyTextFormat((ulong)plantFarmMoney[4])}</color>" + " BTH";
                     ValueOfPlayerMoney += plantFarmMoney[4];
@@ -4705,6 +4928,7 @@ public class GameControl : MonoBehaviour
                                 break;
                         }
 
+                        audioManager.PlaySFX(audioManager.Star);
                         StarUp[4].SetActive(true);
                         StarUpText[4].gameObject.SetActive(true);
                         StarUpText[4].text = $"<color=yellow>{CurrencyTextFormat((ulong)plantFarmStar[4])}</color>";
@@ -4740,6 +4964,8 @@ public class GameControl : MonoBehaviour
                                 break;
                         }
 
+                        audioManager.PlaySFX(audioManager.PlantHarvest);
+                        audioManager.PlaySFX(audioManager.Money);
                         MoneyUp[4].SetActive(true);
                         MoneyUpText[4].text = $"<color=green>{CurrencyTextFormat((ulong)plantFarmMoney[4])}</color>" + " BTH";
                         ValueOfPlayerMoney += plantFarmMoney[4];
@@ -4767,6 +4993,7 @@ public class GameControl : MonoBehaviour
                                     break;
                             }
 
+                            audioManager.PlaySFX(audioManager.Star);
                             StarUp[4].SetActive(true);
                             StarUpText[4].gameObject.SetActive(true);
                             StarUpText[4].text = $"<color=yellow>{CurrencyTextFormat((ulong)plantFarmStar[4])}</color>";
@@ -4778,6 +5005,7 @@ public class GameControl : MonoBehaviour
             }
             else
             {
+                audioManager.PlaySFX(audioManager.Denied);
                 alert[14].SetActive(true);
             }
         }
@@ -4840,6 +5068,8 @@ public class GameControl : MonoBehaviour
                             break;
                     }
 
+                    audioManager.PlaySFX(audioManager.PlantHarvest);
+                    audioManager.PlaySFX(audioManager.Money);
                     MoneyUp[6].SetActive(true);
                     MoneyUpText[6].text = $"<color=green>{CurrencyTextFormat((ulong)plantFarmMoney[5])}</color>" + " BTH";
                     ValueOfPlayerMoney += plantFarmMoney[5];
@@ -4886,6 +5116,7 @@ public class GameControl : MonoBehaviour
                                 break;
                         }
 
+                        audioManager.PlaySFX(audioManager.Star);
                         StarUp[6].SetActive(true);
                         StarUpText[6].gameObject.SetActive(true);
                         StarUpText[6].text = $"<color=yellow>{CurrencyTextFormat((ulong)plantFarmStar[5])}</color>";
@@ -4921,6 +5152,8 @@ public class GameControl : MonoBehaviour
                                 break;
                         }
 
+                        audioManager.PlaySFX(audioManager.PlantHarvest);
+                        audioManager.PlaySFX(audioManager.Money);
                         MoneyUp[6].SetActive(true);
                         MoneyUpText[6].text = $"<color=green>{CurrencyTextFormat((ulong)plantFarmMoney[5])}</color>" + " BTH";
                         ValueOfPlayerMoney += plantFarmMoney[5];
@@ -4948,6 +5181,7 @@ public class GameControl : MonoBehaviour
                                     break;
                             }
 
+                            audioManager.PlaySFX(audioManager.Star);
                             StarUp[6].SetActive(true);
                             StarUpText[6].gameObject.SetActive(true);
                             StarUpText[6].text = $"<color=yellow>{CurrencyTextFormat((ulong)plantFarmStar[5])}</color>";
@@ -4959,6 +5193,7 @@ public class GameControl : MonoBehaviour
             }
             else
             {
+                audioManager.PlaySFX(audioManager.Denied);
                 alert[14].SetActive(true);
             }
         }
@@ -5021,8 +5256,9 @@ public class GameControl : MonoBehaviour
                             break;
                     }
 
+                    audioManager.PlaySFX(audioManager.PlantHarvest);
+                    audioManager.PlaySFX(audioManager.Money);
                     MoneyUp[8].SetActive(true);
-
                     MoneyUpText[8].text = $"<color=green>{CurrencyTextFormat((ulong)plantFarmMoney[6])}</color>" + " BTH";
                     ValueOfPlayerMoney += plantFarmMoney[6];
                     Block[6].SetActive(false);
@@ -5068,6 +5304,7 @@ public class GameControl : MonoBehaviour
                                 break;
                         }
 
+                        audioManager.PlaySFX(audioManager.Star);
                         StarUp[8].SetActive(true);
                         StarUpText[8].gameObject.SetActive(true);
                         StarUpText[8].text = $"<color=yellow>{CurrencyTextFormat((ulong)plantFarmStar[6])}</color>";
@@ -5103,6 +5340,8 @@ public class GameControl : MonoBehaviour
                                 break;
                         }
 
+                        audioManager.PlaySFX(audioManager.PlantHarvest);
+                        audioManager.PlaySFX(audioManager.Money);
                         MoneyUp[8].SetActive(true);
                         MoneyUpText[8].text = $"<color=green>{CurrencyTextFormat((ulong)plantFarmMoney[6])}</color>" + " BTH";
                         ValueOfPlayerMoney += plantFarmMoney[6];
@@ -5130,6 +5369,7 @@ public class GameControl : MonoBehaviour
                                     break;
                             }
 
+                            audioManager.PlaySFX(audioManager.Star);
                             StarUp[8].SetActive(true);
                             StarUpText[8].gameObject.SetActive(true);
                             StarUpText[8].text = $"<color=yellow>{CurrencyTextFormat((ulong)plantFarmStar[6])}</color>";
@@ -5141,6 +5381,7 @@ public class GameControl : MonoBehaviour
             }
             else
             {
+                audioManager.PlaySFX(audioManager.Denied);
                 alert[14].SetActive(true);
             }
         }
@@ -5203,6 +5444,8 @@ public class GameControl : MonoBehaviour
                             break;
                     }
 
+                    audioManager.PlaySFX(audioManager.PlantHarvest);
+                    audioManager.PlaySFX(audioManager.Money);
                     MoneyUp[10].SetActive(true);
                     MoneyUpText[10].text = $"<color=green>{CurrencyTextFormat((ulong)plantFarmMoney[7])}</color>" + " BTH";
                     ValueOfPlayerMoney += plantFarmMoney[7];
@@ -5249,6 +5492,7 @@ public class GameControl : MonoBehaviour
                                 break;
                         }
 
+                        audioManager.PlaySFX(audioManager.Star);
                         StarUp[10].SetActive(true);
                         StarUpText[10].gameObject.SetActive(true);
                         StarUpText[10].text = $"<color=yellow>{CurrencyTextFormat((ulong)plantFarmStar[7])}</color>";
@@ -5284,6 +5528,8 @@ public class GameControl : MonoBehaviour
                                 break;
                         }
 
+                        audioManager.PlaySFX(audioManager.PlantHarvest);
+                        audioManager.PlaySFX(audioManager.Money);
                         MoneyUp[10].SetActive(true);
                         MoneyUpText[10].text = $"<color=green>{CurrencyTextFormat((ulong)plantFarmMoney[7])}</color>" + " BTH";
                         ValueOfPlayerMoney += plantFarmMoney[7];
@@ -5311,6 +5557,7 @@ public class GameControl : MonoBehaviour
                                     break;
                             }
 
+                            audioManager.PlaySFX(audioManager.Star);
                             StarUp[10].SetActive(true);
                             StarUpText[10].gameObject.SetActive(true);
                             StarUpText[10].text = $"<color=yellow>{CurrencyTextFormat((ulong)plantFarmStar[7])}</color>";
@@ -5322,6 +5569,7 @@ public class GameControl : MonoBehaviour
             }
             else
             {
+                audioManager.PlaySFX(audioManager.Denied);
                 alert[14].SetActive(true);
             }
         }
@@ -5346,6 +5594,8 @@ public class GameControl : MonoBehaviour
                     }
                 }
 
+                audioManager.PlaySFX(audioManager.FishHarvest);
+                audioManager.PlaySFX(audioManager.Money);
                 MoneyUp[5].SetActive(true);
                 ValueOfPlayerMoney += (ulong)animalFarmMoney[0];
                 ValueOfPlayerExperience += (int)animalFarmMoney[0];
@@ -5394,6 +5644,7 @@ public class GameControl : MonoBehaviour
                                 break;
                         }
 
+                        audioManager.PlaySFX(audioManager.Star);
                         StarUp[5].SetActive(true);
                         StarUpText[5].gameObject.SetActive(true);
                         StarUpText[5].text = $"<color=yellow>{CurrencyTextFormat((ulong)animalFarmStar[0])}</color>";
@@ -5437,6 +5688,7 @@ public class GameControl : MonoBehaviour
                         animalObj[4].SetActive(false);
                         break;
                     default:
+                        audioManager.PlaySFX(audioManager.Pop2);
                         alert[1].SetActive(true);
                         alert[10].SetActive(true);
                         StartCoroutine(ResetGame());
@@ -5461,12 +5713,15 @@ public class GameControl : MonoBehaviour
                         animalObj[5].SetActive(false);
                         break;
                     default:
+                        audioManager.PlaySFX(audioManager.Pop2);
                         alert[1].SetActive(true);
                         alert[10].SetActive(true);
                         StartCoroutine(ResetGame());
                         break;
                 }
 
+                audioManager.PlaySFX(audioManager.AnimalHarvest);
+                audioManager.PlaySFX(audioManager.Money);
                 MoneyUp[7].SetActive(true);
                 ValueOfPlayerMoney += (ulong)animalFarmMoney[1];
                 ValueOfPlayerExperience += (int)animalFarmMoney[1];
@@ -5513,6 +5768,7 @@ public class GameControl : MonoBehaviour
                             break;
                     }
 
+                    audioManager.PlaySFX(audioManager.Star);
                     StarUp[7].SetActive(true);
                     StarUpText[7].gameObject.SetActive(true);
                     StarUpText[7].text = $"<color=yellow>{CurrencyTextFormat((ulong)animalFarmStar[1])}</color>";
@@ -5544,12 +5800,15 @@ public class GameControl : MonoBehaviour
                             animalObj[4].SetActive(false);
                             break;
                         default:
+                            audioManager.PlaySFX(audioManager.Pop2);
                             alert[1].SetActive(true);
                             alert[10].SetActive(true);
                             StartCoroutine(ResetGame());
                             break;
                     }
 
+                    audioManager.PlaySFX(audioManager.AnimalHarvest);
+                    audioManager.PlaySFX(audioManager.Money);
                     MoneyUp[7].SetActive(true);
                     ValueOfPlayerMoney += (ulong)animalFarmMoney[1];
                     ValueOfPlayerExperience += (int)animalFarmMoney[1];
@@ -5577,6 +5836,7 @@ public class GameControl : MonoBehaviour
                                 break;
                         }
 
+                        audioManager.PlaySFX(audioManager.Star);
                         StarUp[7].SetActive(true);
                         StarUpText[7].gameObject.SetActive(true);
                         StarUpText[7].text = $"<color=yellow>{CurrencyTextFormat((ulong)animalFarmStar[1])}</color>";
@@ -5619,6 +5879,7 @@ public class GameControl : MonoBehaviour
                         animalObj[6].SetActive(false);
                         break;
                     default:
+                        audioManager.PlaySFX(audioManager.Pop2);
                         alert[1].SetActive(true);
                         alert[10].SetActive(true);
                         StartCoroutine(ResetGame());
@@ -5643,12 +5904,15 @@ public class GameControl : MonoBehaviour
                         animalObj[7].SetActive(false);
                         break;
                     default:
+                        audioManager.PlaySFX(audioManager.Pop2);
                         alert[1].SetActive(true);
                         alert[10].SetActive(true);
                         StartCoroutine(ResetGame());
                         break;
                 }
 
+                audioManager.PlaySFX(audioManager.AnimalHarvest);
+                audioManager.PlaySFX(audioManager.Money);
                 MoneyUp[9].SetActive(true);
                 ValueOfPlayerMoney += (ulong)animalFarmMoney[2];
                 ValueOfPlayerExperience += (int)animalFarmMoney[2];
@@ -5695,6 +5959,7 @@ public class GameControl : MonoBehaviour
                             break;
                     }
 
+                    audioManager.PlaySFX(audioManager.Star);
                     StarUp[9].SetActive(true);
                     StarUpText[9].gameObject.SetActive(true);
                     StarUpText[9].text = $"<color=yellow>{CurrencyTextFormat((ulong)animalFarmStar[2])}</color>";
@@ -5725,12 +5990,15 @@ public class GameControl : MonoBehaviour
                             animalObj[6].SetActive(false);
                             break;
                         default:
+                            audioManager.PlaySFX(audioManager.Pop2);
                             alert[1].SetActive(true);
                             alert[10].SetActive(true);
                             StartCoroutine(ResetGame());
                             break;
                     }
 
+                    audioManager.PlaySFX(audioManager.AnimalHarvest);
+                    audioManager.PlaySFX(audioManager.Money);
                     MoneyUp[9].SetActive(true);
                     ValueOfPlayerMoney += (ulong)animalFarmMoney[2];
                     ValueOfPlayerExperience += (int)animalFarmMoney[2];
@@ -5758,6 +6026,7 @@ public class GameControl : MonoBehaviour
                                 break;
                         }
 
+                        audioManager.PlaySFX(audioManager.Star);
                         StarUp[9].SetActive(true);
                         StarUpText[9].gameObject.SetActive(true);
                         StarUpText[9].text = $"<color=yellow>{CurrencyTextFormat((ulong)animalFarmStar[2])}</color>";
@@ -5771,6 +6040,7 @@ public class GameControl : MonoBehaviour
         }
         else
         {
+            audioManager.PlaySFX(audioManager.Pop2);
             alert[1].SetActive(true);
             alert[10].SetActive(true);
             StartCoroutine(ResetGame());
