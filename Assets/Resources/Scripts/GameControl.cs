@@ -426,6 +426,7 @@ public class GameControl : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKey("escape"))
         {
+            audioManager.PlaySFX(audioManager.Pop2);
             pause.SetActive(true);
             Time.timeScale = 0f;
         }
@@ -433,6 +434,7 @@ public class GameControl : MonoBehaviour
 
     public void Setting()
     {
+        audioManager.PlaySFX(audioManager.Pop2);
         pause.SetActive(true);
         Time.timeScale = 0f;
     }
@@ -4068,7 +4070,7 @@ public class GameControl : MonoBehaviour
             if (plantsGrowLevel[0] == 2)
             {
                 starpercentage = UnityEngine.Random.Range(1, 101);
-                starQt = UnityEngine.Random.Range(1, ValueOfPlayerLevel + 1);
+                starQt = UnityEngine.Random.Range(2, ValueOfPlayerLevel + 1);
 
                 if (plants[0].gameObject.activeSelf && plants[1].gameObject.activeSelf)
                 {
@@ -4261,7 +4263,7 @@ public class GameControl : MonoBehaviour
             if (plantsGrowLevel[2] == 2)
             {
                 starpercentage = UnityEngine.Random.Range(1, 101);
-                starQt = UnityEngine.Random.Range(1, ValueOfPlayerLevel + 1);
+                starQt = UnityEngine.Random.Range(2, ValueOfPlayerLevel + 1);
                 if (plants[2].gameObject.activeSelf && plants[3].gameObject.activeSelf)
                 {
                     switch (PlantA[2])
@@ -4449,7 +4451,7 @@ public class GameControl : MonoBehaviour
             if (plantsGrowLevel[4] == 2)
             {
                 starpercentage = UnityEngine.Random.Range(1, 101);
-                starQt = UnityEngine.Random.Range(1, ValueOfPlayerLevel + 1);
+                starQt = UnityEngine.Random.Range(2, ValueOfPlayerLevel + 1);
                 if (plants[4].gameObject.activeSelf && plants[5].gameObject.activeSelf)
                 {
                     switch (PlantA[4])
@@ -4641,7 +4643,7 @@ public class GameControl : MonoBehaviour
             if (plantsGrowLevel[6] == 2)
             {
                 starpercentage = UnityEngine.Random.Range(1, 101);
-                starQt = UnityEngine.Random.Range(1, ValueOfPlayerLevel + 1);
+                starQt = UnityEngine.Random.Range(2, ValueOfPlayerLevel + 1);
                 if (plants[6].gameObject.activeSelf && plants[7].gameObject.activeSelf)
                 {
                     switch (PlantA[6])
@@ -4829,7 +4831,7 @@ public class GameControl : MonoBehaviour
             if (plantsGrowLevel[8] == 2)
             {
                 starpercentage = UnityEngine.Random.Range(1, 101);
-                starQt = UnityEngine.Random.Range(1, ValueOfPlayerLevel + 1);
+                starQt = UnityEngine.Random.Range(2, ValueOfPlayerLevel + 1);
                 if (plants[8].gameObject.activeSelf && plants[9].gameObject.activeSelf)
                 {
                     switch (PlantA[8])
@@ -5017,7 +5019,7 @@ public class GameControl : MonoBehaviour
             if (plantsGrowLevel[10] == 2)
             {
                 starpercentage = UnityEngine.Random.Range(1, 101);
-                starQt = UnityEngine.Random.Range(1, ValueOfPlayerLevel + 1);
+                starQt = UnityEngine.Random.Range(2, ValueOfPlayerLevel + 1);
                 if (plants[10].gameObject.activeSelf && plants[11].gameObject.activeSelf)
                 {
                     switch (PlantA[10])
@@ -5205,7 +5207,7 @@ public class GameControl : MonoBehaviour
             if (plantsGrowLevel[12] == 2)
             {
                 starpercentage = UnityEngine.Random.Range(1, 101);
-                starQt = UnityEngine.Random.Range(1, ValueOfPlayerLevel + 1);
+                starQt = UnityEngine.Random.Range(2, ValueOfPlayerLevel + 1);
                 if (plants[12].gameObject.activeSelf && plants[13].gameObject.activeSelf)
                 {
                     switch (PlantA[12])
@@ -5393,7 +5395,7 @@ public class GameControl : MonoBehaviour
             if (plantsGrowLevel[14] == 2)
             {
                 starpercentage = UnityEngine.Random.Range(1, 101);
-                starQt = UnityEngine.Random.Range(1, ValueOfPlayerLevel + 1);
+                starQt = UnityEngine.Random.Range(2, ValueOfPlayerLevel + 1);
                 if (plants[14].gameObject.activeSelf && plants[15].gameObject.activeSelf)
                 {
                     switch (PlantA[14])
@@ -5579,7 +5581,7 @@ public class GameControl : MonoBehaviour
         else if (val == 8)
         {
             starpercentage = UnityEngine.Random.Range(1, 101);
-            starQt = UnityEngine.Random.Range(1, ValueOfPlayerLevel + 1);
+            starQt = UnityEngine.Random.Range(2, ValueOfPlayerLevel + 1);
             if (Block[10].activeSelf)
             {
                 for (int f = 8; f < animalObj.Count; f++)
@@ -5662,7 +5664,7 @@ public class GameControl : MonoBehaviour
         else if (val == 9)
         {
             starpercentage = UnityEngine.Random.Range(1, 101);
-            starQt = UnityEngine.Random.Range(1, ValueOfPlayerLevel + 1);
+            starQt = UnityEngine.Random.Range(2, ValueOfPlayerLevel + 1);
 
             if (animalObj[0].activeSelf && animalObj[1].activeSelf && !animalObj[4].activeSelf && !animalObj[5].activeSelf && Block[9].activeSelf
                 || !animalObj[0].activeSelf && animalObj[4].activeSelf && animalObj[1].activeSelf && !animalObj[5].activeSelf && Block[9].activeSelf
@@ -5854,7 +5856,7 @@ public class GameControl : MonoBehaviour
         else if (val == 10) 
         {
             starpercentage = UnityEngine.Random.Range(1, 101);
-            starQt = UnityEngine.Random.Range(1, ValueOfPlayerLevel + 1);
+            starQt = UnityEngine.Random.Range(2, ValueOfPlayerLevel + 1);
 
             if (animalObj[2].activeSelf && animalObj[3].activeSelf && !animalObj[6].activeSelf && !animalObj[7].activeSelf && Block[8].activeSelf
                 || !animalObj[2].activeSelf && animalObj[6].activeSelf && animalObj[3].activeSelf && !animalObj[7].activeSelf && Block[8].activeSelf
